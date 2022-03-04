@@ -1,11 +1,11 @@
-<div id="main-nav" class="container px-4">
+<div class="container px-4">
     <a class="navbar-brand" href="{% url 'home' %}">Electric Axles</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
+    <div class="collapse navbar-collapse" id="main-nav">
         <ul class="navbar-nav ms-auto">
-            <li class="list-inline-item py-3">
+            <li class="nav-item py-3">
                 <form class="form" method="GET" action="">
                     <div class="input-group w-100">
                         <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search">
@@ -19,7 +19,7 @@
                     </div>
                 </form>
             </li>
-            <li class="list-inline-item dropdown">
+            <li class="nav-item dropdown">
                 <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="text-center">
                         <div><i class="fas fa-user fa-lg"></i></div>
@@ -39,7 +39,7 @@
                     {% endif %}
                 </div>
             </li>
-            <li class="list-inline-item">
+            <li class="nav-item">
                 <a class="{% if grand_total %}text-info font-weight-bold{% else %}{% endif %} nav-link" href="">
                     <div class="text-center">
                         <div><i class="fas fa-shopping-bag fa-lg"></i></div>
