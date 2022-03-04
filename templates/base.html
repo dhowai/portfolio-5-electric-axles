@@ -2,56 +2,59 @@
 
 <!doctype html>
 <html lang="en">
+    <head>
+        {% block meta %}
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        {% endblock %}
 
-<head>
-    {% block meta %}
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {% endblock %}
+        {% block extra_meta %}
+        {% endblock %}
 
-    {% block extra_meta %}
-    {% endblock %}
+        {% block corecss %}
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        {% endblock %}
 
-    {% block corecss %}
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    {% endblock %}
+        {% block extra_css %}
+        {% endblock %}
 
-    {% block extra_css %}
-    {% endblock %}
+        {% block corejs %}
+            <script src="https://kit.fontawesome.com/0145a8fa3e.js" crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        {% endblock %}
 
-    {% block corejs %}
-        <script src="https://kit.fontawesome.com/0145a8fa3e.js" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    {% endblock %}
+        {% block extra_js %}
+        {% endblock %}
 
-    {% block extra_js %}
-    {% endblock %}
+        <title>Electric Axles {% block extra_title %}{% endblock %}</title>
+    </head>
 
-    <title>Electric Axles {% block extra_title %}{% endblock %}</title>
-</head>
+    <body>
+        <header class="bg-primary bg-gradient text-white banner">
+            <div class="container px-4 text-center">
+                <h1 class="fw-bolder">Welcome to Electric Axles</h1>
+                <p class="lead">A Place All About Electric Rides!</p>
+                <a class="btn btn-lg btn-light" href="#about">Start scrolling!</a>
+            </div>
+        </header>
 
-<body>
-    <header class="container-fluid fixed-top"></header>
+        {% if messages %}
+            <div class="message-container"></div>
+        {% endif %}
 
-    {% if messages %}
-        <div class="message-container"></div>
-    {% endif %}
+        {% block page_header %}
+        {% endblock %}
 
-    {% block page_header %}
-    {% endblock %}
+        {% block content %}
+        {% endblock %}
 
-    {% block content %}
-    {% endblock %}
-
-    {% block postloadjs %}
-    {% endblock %}
-    
-</body>
-
+        {% block postloadjs %}
+        {% endblock %}
+    </body>
 </html>
