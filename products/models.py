@@ -11,6 +11,12 @@ class Category(models.Model):
         """ Correct plural for category in admin"""
         verbose_name_plural = 'categories'
 
+    def get_absolute_url(self):
+        """
+        Creates dynamic urls for categories
+        """
+        return reverse('category_list', args=[self.slug])
+
     def __str__(self):
         return self.name
 
