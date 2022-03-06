@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Category(models.Model):
@@ -32,6 +33,12 @@ class Product(models.Model):
     class Meta:
         """Order by product created"""
         ordering = ('-created',)
+
+    def get_absolute_url(self):
+        """
+        Creates dynamic urls for products
+        """
+        return reverse('product_detail', args=[self.slug])
 
     def __str__(self):
         return self.name
