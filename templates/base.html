@@ -36,11 +36,76 @@
     </head>
 
     <body>
-        <header class="bg-primary bg-gradient text-white banner">
-            <div class="container px-4 text-center">
-                <h1 class="fw-bolder">Welcome to Electric Axles</h1>
-                <p class="lead">A Place All About Electric Rides!</p>
-                <a class="btn btn-lg btn-light" href="#about">Start scrolling!</a>
+        <header class="container-fluid navbar-dark bg-dark fixed-top">
+            <div class="row bg-dark pt-lg-2 d-lg-flex">
+                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+                    <a class="navbar-brand" href="{% url 'home' %}">Electric Axles</a>
+                </div>
+                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                    <form class="form" method="GET" action="">
+                        <div class="input-group w-100">
+                            <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search">
+                            <div class="input-group-append">
+                                <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                                    <span class="icon">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                    <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                        <li class="list-inline-item dropdown">
+                            <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="text-center">
+                                    <div><i class="fas fa-user fa-lg"></i></div>
+                                    <p class="my-0">My Account</p>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                                {% if request.user.is_authenticated %}
+                                    {% if request.user.is_superuser %}
+                                        <a href="" class="dropdown-item">Product Management</a>
+                                    {% endif %}
+                                    <a href="" class="dropdown-item">My Profile</a>
+                                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                {% else %}
+                                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                {% endif %}
+                            </div>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}{% endif %} nav-link" href="">
+                                <div class="text-center">
+                                    <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                    <p class="my-0">
+                                        {% if grand_total %}
+                                            £{{ grand_total|floatformat:2 }}
+                                        {% else %}
+                                            £0.00
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row bg-dark">
+                    <nav class="navbar navbar-expand-lg navbar-dark w-100">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cat-nav" aria-controls="cat-nav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        {% include 'includes/main-nav.html' %}
+                    </nav>
+                </div>
+                <div id="delivery-banner" class="row text-center">
+                    <div class="col bg-black text-white">
+                        <h4 class="logo-font my-1">Free delivery on orders over £{{ free_shipping_threshold }}!</h4>                
+                    </div>            
+                </div>
             </div>
         </header>
 

@@ -2,18 +2,20 @@
 {% load static %}
 
 {% block page_header %}
-   
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
 {% endblock %} 
 
 {% block content %}
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        {% include 'includes/main-nav.html' %}
-    </nav>
-    <div id="delivery-banner" class="row text-center">
-        <div class="col bg-black text-white">
-            <h4 class="logo-font my-1">Free delivery on orders over £{{ free_shipping_threshold }}!</h4>                
-        </div>            
+    <div class="bg-primary bg-gradient text-white banner">
+        <div class="container px-4 text-center">
+            <h1 class="fw-bolder">Welcome to Electric Axles</h1>
+            <p class="lead">A Place All About Electric Rides!</p>
+        </div>
     </div>
     <!-- About section-->
     <section id="about">
