@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <span class="pull-right">(<strong>X</strong>) items</span>
+                        <h5>Items in your Basket</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="table-responsive">
+                            <table class="table shoping-cart-table">
+                                <tbody>
+                                    <tr>
+                                        <td width="90">
+                                            <div class="cart-product-imitation">
+                                            </div>
+                                        </td>
+                                        <td class="desc">
+                                            <h3>
+                                                <a href="#" class="text-navy">
+                                                    Item
+                                                </a>
+                                            </h3>
+                                            <p class="small">
+                                               Item Description
+                                            </p>
+
+                                            <div class="m-t-sm">
+                                                |
+                                                <a href="#" class="text-muted"><i class="fa fa-trash"></i> Remove
+                                                    item</a>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            Price
+                                        </td>
+                                        <td width="65">
+                                            <input type="text" class="form-control" placeholder="1">
+                                        </td>
+                                        <td>
+                                            <h4>
+                                                Total
+                                            </h4>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <button class="btn btn-primary pull-right"><i class="fa fa fa-shopping-cart"></i> Checkout</button>
+                    <button class="btn btn-white"><i class="fa fa-arrow-left"></i> Continue shopping</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>Basket Summary</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <span>
+                            Total
+                        </span>
+                        <h2 class="font-bold">
+                            Price
+                        </h2>
+
+                        <hr>
+                        <span class="text-muted small">
+                            Payment
+                        </span>
+                        <div class="m-t-sm">
+                            <div class="btn-group">
+                                <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-shopping-cart"></i>
+                                    Checkout</a>
+                                <a href="#" class="btn btn-white btn-sm"> Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
