@@ -59,6 +59,11 @@ section {
     color: white;
 }
 
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
 
 .border-black {
     border: 1px solid black !important;

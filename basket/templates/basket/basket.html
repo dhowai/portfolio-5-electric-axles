@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load basket_tools %}
 
 {% block page_header %}
 <div class="container header-container">
@@ -48,7 +49,7 @@
                                                 </p>
                                                 <div class="m-t-sm">
                                                     |
-                                                    <a class="remove-item text-danger" id="remove_{{ item.item_id }}"><i class="fa fa-trash"></i> Remove
+                                                    <a class="remove-item text-danger" id="remove_{{ item.item_id }}" data-product_size="{{item.size }}"><i class="fa fa-trash"></i> Remove
                                                         </a>
                                                     |
                                                     <a class="update-link text-info"><i class="fa-solid fa-arrows-rotate"></i> Update
@@ -60,7 +61,7 @@
                                                 {{ item.product.price }}
                                             </td>
                                             <td width="200">
-                                                <form class="form update-form" method="POST" action="">
+                                                <form class="form update-form" method="POST" action="{% url 'adjust_basket' item.item_id %}">
                                                     {% csrf_token %}
                                                     <div class="form-group">
                                                         <div class="input-group">
@@ -71,7 +72,7 @@
                                                                     </span>
                                                                 </button>
                                                             </div>
-                                                            <input class="form-control" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="20" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                                            <input class="form-control qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="20" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                                                             <div class="input-group-append">
                                                                 <button class="increment-qty btn btn-black rounded-0" data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
                                                                     <span class="icon">
@@ -85,7 +86,7 @@
                                             </td>
                                             <td>
                                                 <h4>
-                                                    {{ item.product.price }}
+                                                    {{ item.product.price | calc_subtotal:item.quantity }}
                                                 </h4>
                                             </td>
                                         </tr>
@@ -171,7 +172,6 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
-{% endblock %}
 
 <script type="text/javascript">
     // Update quantity on click
@@ -184,13 +184,14 @@
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        var size = $(this).data('size');
-        var url = `/basket/remove/${itemId}`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
+        var size = $(this).data('product_size');
+        var url = `/basket/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
 
         $.post(url, data)
          .done(function() {
-             location.reload();
-         });
+            location.reload();
+        });
     })
-</script> 
+</script>
+{% endblock %}
