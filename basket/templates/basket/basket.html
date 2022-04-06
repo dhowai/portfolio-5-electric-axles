@@ -38,7 +38,14 @@
                                                 <p class="small">
                                                     {{ item.product.description }}
                                                 </p>
-
+                                                <p class="small">
+                                                    Size:
+                                                    {% if item.product.has_sizes %}
+                                                        {{ item.size|upper }}
+                                                    {% else %}
+                                                        N/A
+                                                    {% endif %}
+                                                </p>
                                                 <div class="m-t-sm">
                                                     |
                                                     <a href="#" class="text-muted"><i class="fa fa-trash"></i> Remove
