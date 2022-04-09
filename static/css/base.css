@@ -80,10 +80,17 @@ section {
 
 .custom-toast {
   overflow: visible;
+  width: 500px;
 }
 
 .toast-capper {
   height: 2px;
+}
+
+.bag-notification-wrapper {
+  height: 100px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 body{margin-top:20px;
