@@ -1,1 +1,23 @@
 {% extends "base.html" %}
+
+
+{% block content %}
+    <div class="container header-container">
+        <div class="row no-gutter">
+            <div class="col-md-6 bg-light">
+                <div class="login d-flex align-items-center py-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-md-12 mx-auto allauth-form-inner-content">
+                                {% block inner_content %}
+                                {% endblock %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 d-none d-md-flex log-bg-image"></div>
+        </div>
+    </div>
+    
+{% endblock %}
