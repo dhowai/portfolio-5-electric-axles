@@ -24,11 +24,31 @@
                         <h5>My Profile</h5>
                     </div>
                     <div class="ibox-content">
-                       {{ profile }}
+                        <p class="text-muted">Default Delivery Information</p>
+                        <form action="{% url 'profile' %}" method="POST" id="profile-update-form" class="mt-3">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                           
+                                <button class="btn btn-primary text-uppercase me-md-2">Update Information</button>
+                            
+                        </form>
                     </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="ibox-title">
+                    <h5>Order History</h5>
+                </div>
+                <div class="ibox-content">
+                    {{ orders }}
                 </div>
             </div>
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
 {% endblock %}
