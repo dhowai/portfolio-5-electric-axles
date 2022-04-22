@@ -120,8 +120,13 @@
                                 {% for item in basket_items %}
                                 <tr>
                                     <td width="90">
-                                        <img class="img-fluid py-3" src="{{ item.product.image.url }}"
-                                            alt="{{ item.product.image.url }}">
+                                        {% if product.image %}
+                                        <img class="img-fluid py-3" src="{{ product.image.url }}"
+                                            alt="{{ product.name }}">
+                                        {% else %}
+                                        <img class="img-fluid py-3" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                            alt="{{ product.name }}">
+                                        {% endif %}
                                     </td>
                                     <td class="desc">
                                         <h3>

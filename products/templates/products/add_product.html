@@ -20,7 +20,7 @@
                     </div>
                     <div class="ibox-content">
                         <h5 class="text-muted">Add a Product</h5>
-                        <form action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
+                        <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
                             {% csrf_token %}
                             {{ form | crispy }}
                             <div class="d-grid d-md-flex justify-content-md-end py-2">
