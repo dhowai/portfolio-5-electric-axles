@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import Product, Category
 from .forms import ProductForm
@@ -51,8 +52,13 @@ def category_list(request, category_slug):
     return render(request, 'products/category.html', {'category': category, 'products': products})
 
 
+@login_required
 def add_product(request):
     """Add a product to the store"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store management can do that.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -72,8 +78,13 @@ def add_product(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_product(request, slug):
     """Edit a product from the store"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store management can do that.')
+        return redirect(reverse('home'))
+
     product = get_object_or_404(Product, slug=slug)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
@@ -96,8 +107,13 @@ def edit_product(request, slug):
     return render(request, template, context)
 
 
+@login_required
 def delete_product(request, slug):
     """Delete a product from the store"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store management can do that.')
+        return redirect(reverse('home'))
+
     product = get_object_or_404(Product, slug=slug)
     product.delete()
     messages.success(request, 'Product deleted!')
