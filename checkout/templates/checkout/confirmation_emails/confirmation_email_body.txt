@@ -1,0 +1,20 @@
+Hello {{ order.first_name }} {{ order.last_name }}.
+
+Thank you for ordering from Electric Axles, your order was placed on the {{ order.date }}
+and your order number is {{ order.order_number }}. Below is the total cost of the transaction:
+
+Order Total: £{{ order.order_total }}
+Delivery: £{{ order.delivery_cost }}
+Grand Total: £{{ order.grand_total }}
+
+Your order will be shipped to {{ order.address }} in {{ order.city }}, {{ order.country }}.
+
+We will contact you on {{ order.phone_number }} if any problems occur in that time.
+
+If you have any questions, feel free to contact us at {{ contact_email }}.
+
+Thanks for your buisness!
+
+Sincerely,
+
+The Electric Axles Team
