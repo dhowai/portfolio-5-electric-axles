@@ -37,6 +37,15 @@
                                     <h5 class="d-block p-2 bg-primary text-white">{{ product.name }}</h5>
                                     <!-- Product price-->
                                     <span class="text-muted large">£{{ product.price }}</span>
+                                    
+                                </div>
+                                <div class="text-center">
+                                    {% if request.user.is_superuser %}
+                                        <small class="mx-2">
+                                            <a class="text-primary" href="{% url 'edit_product' product.slug %}">Edit</a> |
+                                            <a class="text-danger" href="{% url 'delete_product' product.slug %}">Delete</a>
+                                        </small>
+                                    {% endif %}
                                 </div>
                             </div>
                             <!-- Product actions-->
