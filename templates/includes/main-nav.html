@@ -6,15 +6,64 @@
                 | All Products |
             </a>
         </li>
-        {% for cat in categories %}
+
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="{{ cat.get_absolute_url }}">
-                {{ cat.name|title }} |
+            <a class="logo-font font-weight-bold nav-link text-white mr-5"  href="#" id="onewheel-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Skate |
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item"></a>
+            <div class="dropdown-menu border-0" aria-labelledby="onewheel-link">
+                <a href="{% url 'products' %}?category=Onewheel" class="dropdown-item">Onewheel</a>
+                <a href="{% url 'products' %}?category=Evolve" class="dropdown-item">Evolve</a>
+                <a href="{% url 'products' %}?category=Onewheel,Evolve" class="dropdown-item">All Skates</a>
             </div>
         </li>
-        {% endfor %}
+
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-white mr-5"  href="#" id="bikes-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Bikes |
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="bikes-link">
+                <a href="{% url 'products' %}?category=Stealth" class="dropdown-item">Stealth</a>
+                <a href="{% url 'products' %}?category=Zooz" class="dropdown-item">Zooz</a>
+                <a href="{% url 'products' %}?category=Super73" class="dropdown-item">Super 73</a>
+                <a href="{% url 'products' %}?category=Stealth,Zooz,Super73" class="dropdown-item">All Bikes</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-white mr-5"  href="#" id="scooter-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Scooter |
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="scooter-link">
+                <a href="{% url 'products' %}?category=Aer" class="dropdown-item">Aer</a>
+                <a href="{% url 'products' %}?category=Nami" class="dropdown-item">Nami</a>
+                <a href="{% url 'products' %}?category=Apollo" class="dropdown-item">Apollo</a>
+                <a href="{% url 'products' %}?category=Aer,Nami,Apollo" class="dropdown-item">All Scooters</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-white mr-5"  href="#" id="unicycle-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Unicycle |
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="unicycle-link">
+                <a href="{% url 'products' %}?category=Inmotion" class="dropdown-item">Inmotion</a>
+                <a href="{% url 'products' %}?category=Kingsong" class="dropdown-item">Kingsong</a>
+                <a href="{% url 'products' %}?category=Inmotion,Kingsong" class="dropdown-item">All Unicycles</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-white mr-5"  href="#" id="safety-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Safety Gear |
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="safety-link">
+                <a href="{% url 'products' %}?category=Helmets" class="dropdown-item">Helmets</a>
+                <a href="{% url 'products' %}?category=Pads" class="dropdown-item">Pads</a>
+                <a href="{% url 'products' %}?category=Gloves" class="dropdown-item">Gloves</a>
+                <a href="{% url 'products' %}?category=Helmets,Pads,Gloves" class="dropdown-item">All Safety Gear</a>
+            </div>
+        </li>
+
     </ul>
 </div>
