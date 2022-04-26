@@ -7,8 +7,7 @@ class CategoryAdmin(admin.ModelAdmin):
     """
     Custom admin for category model
     """
-    list_display = ['name', 'slug']
-    prepopulated_fields = {'slug': ('name',)}
+    list_display = ['name', ]
 
 
 @admin.register(Product)
