@@ -116,61 +116,79 @@
                     </div>
                     <div class="ibox-content">
                         <table class="table shoping-cart-table">
-                            <tbody>
-                                {% for item in basket_items %}
+                            <thead>
                                 <tr>
-                                    <td width="90">
-                                        {% if product.image %}
-                                        <img class="img-fluid py-3" src="{{ product.image.url }}"
-                                            alt="{{ product.name }}">
-                                        {% else %}
-                                        <img class="img-fluid py-3" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-                                            alt="{{ product.name }}">
-                                        {% endif %}
-                                    </td>
-                                    <td class="desc">
-                                        <h3>
-                                            <a href="#" class="text-navy">
-                                                {{ item.product.name }}
-                                            </a>
-                                        </h3>
-                                        <p class="small">
-                                            Size:
-                                            {% if item.product.has_sizes %}
-                                                {{ item.size|upper }}
-                                            {% else %}
-                                                N/A
-                                            {% endif %}
-                                        </p>
-                                        <p class="small">
-                                            Qty: {{ item.quantity }}
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <h4>
-                                            £{{ item.product.price | calc_subtotal:item.quantity }}
-                                        </h4>
-                                    </td>
+                                    <th scope="col">Product Info</th>
+                                    <th scope="col"></th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Qty</th>
+                                    <th scope="col">Subtotal</th>
                                 </tr>
+                            </thead>
+
+                                {% for item in basket_items %}
+                                    <tbody>
+                                        <tr>
+                                            <td class="p-3 w-25">
+                                                {% if item.product.image %}
+                                                    <img class="img-fluid py-3" src="{{ item.product.image.url }}"
+                                                        alt="{{ item.product.name }}">
+                                                {% else %}
+                                                    <img class="img-fluid py-3" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                                        alt="{{ item.product.name }}">
+                                                {% endif %}
+                                            </td>
+                                            <td class="py-3 desc align-middle">
+                                                <p class="my-0">
+                                                    <a class="text-navy my-0" href="{{ item.product.get_absolute_url }}">
+                                                        {{ item.product.name|upper }}
+                                                    </a>
+                                                </p>
+
+                                                {% if item.product.has_sizes %}
+                                                    <p class="small">
+                                                        Size: {{ item.size|upper }}
+                                                    </p>
+                                                {% else %}
+                                                    <p class="d-none"></p>
+                                                {% endif %}
+                                        
+                                            </td>
+                                            <td class="py-3 desc align-middle">
+                                                <p class="my-0">
+                                                    £{{ item.product.price }}
+                                                </p> 
+                                            </td>
+                                            <td class="py-3 desc align-middle">
+                                                <p class="my-0 small">
+                                                    {{ item.quantity }}
+                                                </p>
+                                            </td>
+                                            <td class="py-3 desc align-middle">
+                                                <p class="my-0">
+                                                    £{{ item.product.price | calc_subtotal:item.quantity }}
+                                                </p> 
+                                            </td>
+                                        </tr>
+                                    </tbody>    
                                 {% endfor %}
-                            </tbody>
                         </table>
                         <hr>
                         <div class="d-flex align-items-end flex-column">
                             <div class="p-2">
-                                <h2 class="font-bold">
+                                <h4 class="font-bold">
                                     Order Total: £{{ total|floatformat:2 }}
-                                </h2>
+                                </h4>
                             </div>
                             <div class="p-2">
-                                <h2 class="font-bold">
+                                <h4 class="font-bold">
                                     Delivery: £{{ delivery|floatformat:2 }}
-                                </h2>
+                                </h4>
                             </div>
                             <div class="p-2">
-                                <h2 class="font-bold">
+                                <h4 class="font-bold">
                                     Grand Total: £{{ grand_total|floatformat:2 }}
-                                </h2>
+                                </h4>
                             </div>
                         </div>
                     </div>
