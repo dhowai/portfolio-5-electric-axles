@@ -11,7 +11,7 @@
 
 {% block content %}
     <!-- Navigation-->
-    <div class="bg-primary bg-gradient text-white banner">
+    <div class="bg-home text-white banner">
         <div class="container px-4 text-center">
             <h1 class="fw-bolder">Welcome to Electric Axles</h1>
             <p class="lead">A Place All About Electric Rides!</p>
@@ -22,13 +22,15 @@
         <div class="container px-4">
             <div class="row gx-4 justify-content-center">
                 <div class="col-lg-8">
-                    <h2>About this page</h2>
-                    <p class="lead">This is a great place to talk about your webpage. This template is purposefully unstyled so you can use it as a boilerplate or starting point for you own landing page designs! This template features:</p>
+                    <h2 class="logo-font">About Us</h2>
+                    <p class="lead">We are a store that celebrates the future of personal travel. The are tons of benefits of using e-vehilces:</p>
                     <ul>
-                        <li>Clickable nav links that smooth scroll to page sections</li>
-                        <li>Responsive behavior when clicking nav links perfect for a one page website</li>
-                        <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar</li>
-                        <li>Minimal custom CSS so you are free to explore your own unique design options</li>
+                        <li>They Are More Sustainable</li>
+                        <li>Lower Running Costs</li>
+                        <li>Easy Accessibility</li>
+                        <li>Easy Storage</li>
+                        <li>Health Benefits</li>
+                        <li>They're Fun To Use</li>
                     </ul>
                 </div>
             </div>
@@ -40,7 +42,7 @@
             <div class="row gx-4 justify-content-center">
                 <div class="col-lg-8">
                     <h2>Services we offer</h2>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
+                    <p class="lead">A convient place to view, purchase or enquire about different electric vehicles. We will help you find a one best suited to your needs.</p>
                 </div>
             </div>
         </div>
@@ -51,13 +53,30 @@
             <div class="row gx-4 justify-content-center">
                 <div class="col-lg-8">
                     <h2>Contact us</h2>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
+                    <p class="lead">Get in touch with us.</p>
                 </div>
             </div>
         </div>
     </section>
     <!-- Footer-->
-    <footer class="py-5 bg-dark">
-        <div class="container px-4"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
+    <footer class="footer">
+        <div class="row">
+            <div class="col-sm-6 col-md-4 footer-navigation">
+                <h3><a href="{% url 'home' %}"><span>Electric</span>Axles</a></h3>
+                <p class="company-name">electricaxles.com © 2022</p>
+            </div>
+            <div class="col-sm-6 col-md-4 footer-about">
+                <h4>About the author</h4>
+                <p>Looking to learn and progress as a new Developer</p>
+                <div class="social-links social-icons">
+                    <a href="https://www.linkedin.com/in/daryl-howai-934444211/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/dhowai" target="_blank"><i class="fab fa-github-square"></i></a>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 py-3 footer-about">
+                <h4>About the Site</h4>
+                <p>This site is dedicated to selling electric vehilces</p>
+            </div>
+        </div>
     </footer>
 {% endblock %}

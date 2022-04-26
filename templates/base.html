@@ -102,11 +102,16 @@
                         {% include 'includes/main-nav.html' %}
                     </nav>
                 </div>
-                <div id="delivery-banner" class="row text-center">
-                    <div class="col bg-black text-white">
-                        <h4 class="logo-font my-1">Free delivery on orders over £{{ free_delivery_threshold }}</h4>                
-                    </div>            
-                </div>
+                <div class="jumbotron bg-warning jumbotron-fluid px-3">
+                    <div class="container  text-center">
+                        <div class="d-flex justify-content-evenly">
+                            <div class="p-2 logo-font"><i class="fa-solid fa-star"></i> 4/5 Customer Rating</div>
+                            <div class="p-2 logo-font"><i class="fa-solid fa-truck-fast"></i> Free delivery on orders over £{{ free_delivery_threshold }}</div>
+                            <div class="p-2 logo-font"><i class="fa-solid fa-mobile"></i> Get in touch</div>
+                        </div>
+                    
+                    </div>
+                  </div>
             </div>
         </header>
 
