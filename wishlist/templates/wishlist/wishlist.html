@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid py-4">
+        <div class="container px-4 px-lg-5">
+            <div class="col text-center mt-3">
+                <h2 class="logo-font">Your Wishlist</h2>
+                <hr class="mb-4">
+            </div>
+            <div class="row">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    {% for product in wishlist.products.all %}
+                        <div class="col mb-5">
+                            <div class="card h-100">
+                                <!-- Product image-->
+                                {% if product.image %}
+                                    <a href="{{ product.get_absolute_url }}">
+                                        <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    </a>
+                                {% else %}
+                                    <a href="{{ product.get_absolute_url }}">
+                                        <img class="card-img-top img-fluid" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                            alt="{{ product.name }}">
+                                    </a>
+                                {% endif %}
+                                <!-- Product details-->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Product name-->
+                                        <h5 class="d-block p-2 bg-primary text-white">{{ product.name|upper }}</h5>
+                                        <!-- Product price-->
+                                        <p class="lead fw-bold">£{{ product.price }}</p>
+                                        <!-- Product rating-->
+                                        {% if product.rating %}
+                                            <p class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</p>
+                                        {% else %}
+                                            <p class="text-muted ">Not Rated</p>
+                                        {% endif %}
+                                        {% if product.category %}
+                                        <p class="small">
+                                            <a class="text-muted"
+                                                href="{% url 'products' %}?category={{ product.category.name }}">
+                                                <i class="fas fa-tag mr-1"></i>{{ product.category.name }}
+                                            </a>
+                                        </p>
+                                        {% endif %}
+                                    </div>
+                                    <div class="text-center">
+                                        {% if request.user.is_superuser %}
+                                        <small class="mx-2">
+                                            <a class="text-primary" href="{% url 'edit_product' product.slug %}">Edit</a> |
+                                            <a class="text-danger" href="{% url 'delete_product' product.slug %}">Delete</a>
+                                        </small>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <!-- Product actions-->
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <a class="btn btn-outline-dark btn-light text-uppercase w-100" href="{% url 'remove_from_wishlist' product.slug %}">
+                                        Remove
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <div class="ibox-title">
+                            <h5>There is nothing here...</h5>
+                            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="text-uppercase">Keep Shopping</span>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
