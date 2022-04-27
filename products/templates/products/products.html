@@ -67,7 +67,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="d-block p-2 bg-primary text-white">{{ product.name|upper }}</h5>
+                                    <h5 class="d-block p-2 bg-dark text-white">{{ product.name|upper }}</h5>
                                     <!-- Product price-->
                                     <p class="lead fw-bold">£{{ product.price }}</p>
                                     <!-- Product rating-->
@@ -95,7 +95,11 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                {% if request.user.is_authenticated %}
+                                    <div class="text-center ">
+                                        <a class="fw-bold btn btn-outline-dark text-uppercase rounded-0 mt-auto" href="{% url 'add_to_wishlist' product.slug %}">Add to Wishlist</a>
+                                    </div>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
