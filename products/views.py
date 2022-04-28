@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, Category
+from .models import Product, Category, ProductReview
 from .forms import ProductForm, ReviewForm
 
 
@@ -151,9 +151,44 @@ def add_review(request, slug):
                 review.product = product
                 review.user = request.user
                 review.save()
-                messages.success(request, 'Your review was successfully posted')
+                messages.success(request, f'Your Review Called {review.title} has been Posted Successfully')
                 return redirect(reverse('product_detail', args=[product.slug]))
             else:
                 messages.error(request, 'Failed to post Review, please try again later')
 
     return render(request, {'form': form})
+
+
+@login_required
+def edit_review(request, review_id):
+    """
+    A view for the user to edit a review for a product
+    """
+    review = get_object_or_404(ProductReview, pk=review_id)
+    product = review.product
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.info(request, f'Your Review Called {review.title} has been updated Successfully')
+            return redirect(reverse('product_detail', args=[product.slug]))
+        else:
+            messages.error(request, 'Review edit failed, please try again later')
+    else:
+        form = ReviewForm(instance=review)
+
+    messages.info(request, f'You are Editing Your Review Called {review.title}')
+    template = 'products/product_detail.html'
+
+    return render(request, template, {'form': form, 'review': review, 'product': product, 'edit': True})
+
+
+@login_required
+def delete_review(request, review_id):
+    """Delete"""
+    review = get_object_or_404(ProductReview, pk=review_id)
+    product = review.product
+    review.delete()
+    messages.success(request, f'Your Review Called {review.title} has been deleted Successfully')
+    return redirect(reverse('product_detail', args=[product.slug]))

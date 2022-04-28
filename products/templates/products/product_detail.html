@@ -104,25 +104,43 @@
         </div>
         <div class="row">
             <div class="col-6 col-md-5 col-lg-4 offset-lg-1 mt-3">
-                <div class="ibox">
-                    <div class="ibox-title">
-                        <h2 class="text-black text-center fw-bold">Write A Review</h2>
-                    </div>
-                    <div class="ibox-content">
-                        {% if request.user.is_authenticated %}
-                            <form method="POST" class="align-items-center" action="{% url 'add_review' product.slug %}">
+                <div id="reviews" class="ibox">
+                    {% if request.user.is_authenticated %}
+                        {% if edit %}
+                        <div class="ibox-title">
+                            <h2 class="text-black text-center fw-bold">Edit A Review</h2>
+                        </div>
+                        <div class="ibox-content">
+                            <form method="POST" class="align-items-center" action="{% url 'edit_review' review.id %}#reviews">
                                 {% csrf_token %}
                                 {{ form | crispy }}
                                 <div class="d-flex justify-content-end">
-                                    <button class="fw-bold btn btn-outline-dark rounded-0 text-uppercase mt-2" type="submit">Submit</button>
+                                    <button class="fw-bold btn btn-outline-dark rounded-0 text-uppercase mt-2" type="submit">Update Review</button>
                                 </div>
                             </form>
+                        </div>
                         {% else %}
-                        <div class="text-center">
-                            <p class="small"> You must have an account or be logged in to leave a review.</p>
-                        </div>   
+                            <div class="ibox-title">
+                                <h2 class="text-black text-center fw-bold">Write A Review</h2>
+                            </div>
+                            <div class="ibox-content">
+                                <form method="POST" class="align-items-center" action="{% url 'add_review' product.slug %}">
+                                    {% csrf_token %}
+                                    {{ form | crispy }}
+                                    <div class="d-flex justify-content-end">
+                                        <button class="fw-bold btn btn-outline-dark rounded-0 text-uppercase mt-2" type="submit">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
                         {% endif %}
-                    </div>
+                    {% else %}
+                        <div class="ibox-title">
+                            <h2 class="text-black text-center fw-bold">Write A Review</h2>
+                        </div>
+                        <div class="ibox-content">
+                            <p class="small"> You must <a href="{% url 'account_login' %}">Login</a> to leave a comment or <a href="{% url 'account_signup' %}">Register</a> if you dont have an account</p>
+                        </div>   
+                    {% endif %}
                 </div>
             </div>
             <div class="col-6 col-md-5 col-lg-6 mt-3">
@@ -138,6 +156,16 @@
                                     <p class="card-title"><i class="ml-5 fas fa-star"></i> {{ review.rating }}/5</p>
                                     <p class="card-text lead">{{ review.body }}</p>
                                     <p class="small text-muted"> by {{ review.user }} on {{ review.date_added|date:"d-m-Y"}}</p>    
+                                </div>
+                                <div class="col-12 px-2 py-2">
+                                    {% if review.user == request.user or request.user.is_superuser %}
+                                        <a class="fw-bold btn btn-outline-primary rounded-0 text-uppercase" href="{% url 'edit_review' review.id %}#reviews">
+                                            Edit
+                                        </a>
+                                        <a class="fw-bold btn btn-outline-danger rounded-0 text-uppercase" href="{% url 'delete_review' review.id %}#reviews">
+                                            Delete
+                                        </a>
+                                    {% endif %}
                                 </div>
                             </div>
                         {% empty %}
