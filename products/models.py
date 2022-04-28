@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 
 class Category(models.Model):
@@ -42,3 +43,26 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ProductReview(models.Model):
+    """A model for product reviews"""
+    product = models.ForeignKey(Product, null=True, blank=True, on_delete=models.SET_NULL, related_name='reviews')
+    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
+    title = models.CharField(max_length=250)
+    body = models.TextField()
+    select_rating = (
+        (5, '5'),
+        (4, '4'),
+        (3, '3'),
+        (2, '2'),
+        (1, '1'),
+    )
+    rating = models.IntegerField(choices=select_rating, default=3)
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-date_added']
+
+    def __str__(self):
+        return self.title

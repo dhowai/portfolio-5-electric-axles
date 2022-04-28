@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category
-from .forms import ProductForm
+from .forms import ProductForm, ReviewForm
 
 
 def all_products(request):
@@ -56,7 +56,8 @@ def product_detail(request, slug):
     A view to show the product detail on their own page
     """
     product = get_object_or_404(Product, slug=slug, in_stock=True)
-    return render(request, 'products/product_detail.html', {'product': product})
+    form = ReviewForm()
+    return render(request, 'products/product_detail.html', {'product': product, 'form': form})
 
 
 def categories(request):
@@ -134,3 +135,25 @@ def delete_product(request, slug):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+@login_required
+def add_review(request, slug):
+    """
+    A view for the user to create a review for a product
+    """
+    product = get_object_or_404(Product, slug=slug)
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            form = ReviewForm(request.POST)
+            if form.is_valid():
+                review = form.save(commit=False)
+                review.product = product
+                review.user = request.user
+                review.save()
+                messages.success(request, 'Your review was successfully posted')
+                return redirect(reverse('product_detail', args=[product.slug]))
+            else:
+                messages.error(request, 'Failed to post Review, please try again later')
+
+    return render(request, {'form': form})

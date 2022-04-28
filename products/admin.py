@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category
+from .models import Product, Category, ProductReview
 
 
 @admin.register(Category)
@@ -20,3 +20,6 @@ class ProductAdmin(admin.ModelAdmin):
     list_filter = ['category', 'in_stock', 'is_active']
     list_editable = ['price', 'in_stock']
     prepopulated_fields = {'slug': ('name',)}
+
+
+admin.site.register(ProductReview)
