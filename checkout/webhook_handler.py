@@ -9,7 +9,7 @@ from profiles.models import UserProfile
 from .models import Order, OrderLineItem
 
 
-class StripeWH_Handler:
+class StripeWhHandler:
     """Handle Stripe webhooks"""
     def __init__(self, request):
         self.request = request
@@ -64,10 +64,11 @@ class StripeWH_Handler:
             if save_info:
                 profile.default_phone_number = shipping_details.phone
                 profile.default_country = shipping_details.address.country
+                profile.default_county = shipping_details.address.state
                 profile.default_postcode = shipping_details.address.postal_code
-                profile.default_city = shipping_details.address.city
-                profile.default_address = shipping_details.address.line1
-                profile.default_apartment_suite_etc = shipping_details.address.line2
+                profile.default_town_or_city = shipping_details.address.city
+                profile.default_street_address1 = shipping_details.address.line1
+                profile.default_street_address2 = shipping_details.address.line2
                 profile.save()
 
         order_exists = False
@@ -75,14 +76,15 @@ class StripeWH_Handler:
         while attempt <= 5:
             try:
                 order = Order.objects.get(
-                    first_name__iexact=shipping_details.name,
+                    full_name__iexact=shipping_details.name,
                     email__iexact=billing_details.email,
                     phone_number__iexact=shipping_details.phone,
                     country__iexact=shipping_details.address.country,
+                    county__iexact=shipping_details.address.state,
                     postcode__iexact=shipping_details.address.postal_code,
-                    city__iexact=shipping_details.address.city,
-                    address__iexact=shipping_details.address.line1,
-                    apartment_suite_etc__iexact=shipping_details.address.line2,
+                    town_or_city__iexact=shipping_details.address.city,
+                    street_address1__iexact=shipping_details.address.line1,
+                    street_address2__iexact=shipping_details.address.line2,
                     grand_total=grand_total,
                     original_basket=basket,
                     stripe_pid=pid,
@@ -101,15 +103,16 @@ class StripeWH_Handler:
             order = None
             try:
                 order = Order.objects.create(
-                    first_name=shipping_details.name,
+                    full_name=shipping_details.name,
                     user_profile=profile,
                     email=billing_details.email,
                     phone_number=shipping_details.phone,
                     country=shipping_details.address.country,
+                    county=shipping_details.address.state,
                     postcode=shipping_details.address.postal_code,
-                    city=shipping_details.address.city,
-                    address=shipping_details.address.line1,
-                    apartment_suite_etc=shipping_details.address.line2,
+                    town_or_city=shipping_details.address.city,
+                    street_address1=shipping_details.address.line1,
+                    street_address2=shipping_details.address.line2,
                     original_basket=basket,
                     stripe_pid=pid,
                 )

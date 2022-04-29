@@ -1,4 +1,4 @@
-Hello {{ order.first_name }} {{ order.last_name }}.
+Hello {{ order.full_name }}.
 
 Thank you for ordering from Electric Axles, your order was placed on the {{ order.date }}
 and your order number is {{ order.order_number }}. Below is the total cost of the transaction:

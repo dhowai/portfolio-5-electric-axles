@@ -81,48 +81,39 @@
 
                     <div class="row">
                         <div class="col">
-                            <p class="mb-0 text-black font-weight-bold">First Name</p>
+                            <p class="mb-0 text-black font-weight-bold">Full Name</p>
                         </div>
                         <div class="col">
-                            <p class="mb-0">{{ order.first_name }}</p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col">
-                            <p class="mb-0 text-black font-weight-bold">Last Name</p>
-                        </div>
-                        <div class="col">
-                            <p class="mb-0">{{ order.last_name }}</p>
+                            <p class="mb-0">{{ order.full_name }}</p>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col">
-                            <p class="mb-0 text-black font-weight-bold">Address</p>
+                            <p class="mb-0 text-black font-weight-bold">Address 1</p>
                         </div>
                         <div class="col">
-                            <p class="mb-0">{{ order.address }}</p>
+                            <p class="mb-0">{{ order.street_address1 }}</p>
                         </div>
                     </div>
 
-                    {% if order.apartment_suite_etc %}
+                    {% if order.street_address2 %}
                     <div class="row">
                         <div class="col">
-                            <p class="mb-0 text-black font-weight-bold">Apartment, Suite, etc</p>
+                            <p class="mb-0 text-black font-weight-bold">Address 2</p>
                         </div>
                         <div class="col">
-                            <p class="mb-0">{{ order.apartment_suite_etc}}</p>
+                            <p class="mb-0">{{ order.street_address2 }}</p>
                         </div>
                     </div>
                     {% endif %}
 
                     <div class="row">
                         <div class="col">
-                            <p class="mb-0 text-black font-weight-bold">City</p>
+                            <p class="mb-0 text-black font-weight-bold">Town Or City</p>
                         </div>
                         <div class="col">
-                            <p class="mb-0">{{ order.city }}</p>
+                            <p class="mb-0">{{ order.town_or_city }}</p>
                         </div>
                     </div>
 
@@ -141,6 +132,15 @@
                         </div>
                         <div class="col">
                             <p class="mb-0">{{ order.country }}</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <p class="mb-0 text-black font-weight-bold">County</p>
+                        </div>
+                        <div class="col">
+                            <p class="mb-0">{{ order.county }}</p>
                         </div>
                     </div>
 

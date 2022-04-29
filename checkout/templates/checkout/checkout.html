@@ -49,20 +49,20 @@
                             <div class="col-12">
                                 {{ order_form.country | as_crispy_field }}
                             </div>
+                            <div class="col-12">
+                                {{ order_form.county | as_crispy_field }}
+                            </div>
                             <div class="col-6">
-                                {{ order_form.first_name | as_crispy_field }}
-                            </div>
-                            <div class="col-md-6">
-                                {{ order_form.last_name | as_crispy_field }}
+                                {{ order_form.full_name | as_crispy_field }}
                             </div>
                             <div class="col-md-12">
-                                {{ order_form.address | as_crispy_field }}
+                                {{ order_form.street_address1 | as_crispy_field }}
                             </div>
                             <div class="col-md-12">
-                                {{ order_form.apartment_suite_etc | as_crispy_field }}
+                                {{ order_form.street_address2 | as_crispy_field }}
                             </div>
                             <div class="col-md-6">
-                                {{ order_form.city | as_crispy_field }}
+                                {{ order_form.town_or_city | as_crispy_field }}
                             </div>
                             <div class="col-md-6">
                                 {{ order_form.postcode | as_crispy_field }}
