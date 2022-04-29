@@ -7,7 +7,7 @@ Order Total: £{{ order.order_total }}
 Delivery: £{{ order.delivery_cost }}
 Grand Total: £{{ order.grand_total }}
 
-Your order will be shipped to {{ order.address }} in {{ order.city }}, {{ order.country }}.
+Your order will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
 
 We will contact you on {{ order.phone_number }} if any problems occur in that time.
 

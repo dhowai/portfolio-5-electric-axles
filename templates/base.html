@@ -38,9 +38,11 @@
 
     <body>
         <header class="container-fluid navbar-dark bg-dark fixed-top">
-            <div class="row bg-dark pt-lg-2 d-lg-flex">
+            <div id="topnav" class="row bg-dark pt-lg-2 d-none d-lg-flex">
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                    <a class="navbar-brand" href="{% url 'home' %}">Electric Axles</a>
+                    <a class="navbar-brand nav-link" href="{% url 'home' %}">
+                        <h2 class="logo-font my-0">Electric Axles</h2>
+                    </a>
                 </div>
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                     <form class="form" method="GET" action="{% url 'products' %}">
@@ -60,7 +62,7 @@
                     <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                         <li class="list-inline-item dropdown">
                             <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <div class="text-center">
+                                <div class="text-center text-white">
                                     <div><i class="fas fa-user fa-lg"></i></div>
                                     <p class="my-0">My Account</p>
                                 </div>
@@ -81,7 +83,7 @@
                         </li>
                         <li class="list-inline-item">
                             <a class="{% if grand_total %}text-info font-weight-bold{% else %}{% endif %} nav-link" href="{% url 'view_basket' %}">
-                                <div class="text-center">
+                                <div class="text-center text-white">
                                     <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                     <p class="my-0">
                                         {% if grand_total %}
@@ -95,24 +97,25 @@
                         </li>
                     </ul>
                 </div>
-                <div class="row bg-dark">
-                    <nav class="navbar navbar-expand-lg navbar-dark w-100">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cat-nav" aria-controls="cat-nav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        {% include 'includes/main-nav.html' %}
-                    </nav>
-                </div>
-                <div class="jumbotron bg-warning jumbotron-fluid px-3">
-                    <div class="container  text-center">
-                        <div class="d-flex justify-content-evenly">
-                            <div class="p-2 logo-font"><i class="fa-solid fa-star"></i> 4/5 Customer Rating</div>
-                            <div class="p-2 logo-font"><i class="fa-solid fa-truck-fast"></i> Free delivery on orders over £{{ free_delivery_threshold }}</div>
-                            <div class="p-2 logo-font"><i class="fa-solid fa-mobile"></i> Get in touch</div>
-                        </div>
-                    
+            </div>
+            <div class="row bg-dark">
+                <nav class="navbar navbar-expand-lg navbar-dark w-100">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    {% include 'includes/mobile-top-header.html' %}
+                    {% include 'includes/main-nav.html' %}
+                </nav>
+            </div>
+            <div class="jumbotron bg-warning jumbotron-fluid px-3">
+                <div class="container  text-center">
+                    <div class="d-flex justify-content-evenly">
+                        <div class="p-2 logo-font"><i class="fa-solid fa-star"></i> 4/5 Customer Rating</div>
+                        <div class="p-2 logo-font"><i class="fa-solid fa-truck-fast"></i> Free delivery on orders over £{{ free_delivery_threshold }}</div>
+                        <div class="p-2 logo-font"><i class="fa-solid fa-mobile"></i> Get in touch</div>
                     </div>
-                  </div>
+                
+                </div>
             </div>
         </header>
 
