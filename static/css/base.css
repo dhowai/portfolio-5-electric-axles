@@ -239,8 +239,8 @@ table.shoping-cart-table tr td:last-child {
 
 .ibox {
   clear: both;
-  margin-bottom: 25px;
-  margin-top: 0;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
   padding: 0;
 }
 
