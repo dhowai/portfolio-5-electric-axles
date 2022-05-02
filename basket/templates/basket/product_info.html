@@ -1,0 +1,13 @@
+<p class="my-0">
+    <a class="text-navy my-0" href="{{ item.product.get_absolute_url }}">
+        {{ item.product.name|upper }}
+    </a>
+</p>
+
+{% if item.product.has_sizes %}
+    <p class="small">
+        Size: {{ item.size|upper }}
+    </p>
+{% else %}
+    <p class="d-none"></p>
+{% endif %}
