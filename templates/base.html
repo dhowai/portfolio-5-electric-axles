@@ -73,7 +73,6 @@
                                         <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
                                     {% endif %}
                                     <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                                    <a href="{% url 'wishlist' %}" class="dropdown-item">My Wishlist</a>
                                     <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                                 {% else %}
                                     <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
@@ -82,8 +81,16 @@
                             </div>
                         </li>
                         <li class="list-inline-item">
-                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}{% endif %} nav-link" href="{% url 'view_basket' %}">
-                                <div class="text-center text-white">
+                            <a class="nav-link text-light" href="{% url 'wishlist' %}">
+                                <div class="text-center">
+                                    <div><i class="fa-solid fa-floppy-disk"></i></div>
+                                    <p class="my-0">Wishlist</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-light font-weight-bold{% endif %} nav-link" href="{% url 'view_basket' %}">
+                                <div class="text-center">
                                     <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                     <p class="my-0">
                                         {% if grand_total %}
@@ -107,8 +114,8 @@
                     {% include 'includes/main-nav.html' %}
                 </nav>
             </div>
-            <div class="jumbotron bg-warning jumbotron-fluid px-3">
-                <div class="container  text-center">
+            <div class="jumbotron row bg-warning jumbotron-fluid px-3">
+                <div class="container text-center">
                     <div class="d-flex justify-content-evenly">
                         <div class="p-2 logo-font"><i class="fa-solid fa-star"></i> 4/5 Customer Rating</div>
                         <div class="p-2 logo-font"><i class="fa-solid fa-truck-fast"></i> Free delivery on orders over £{{ free_delivery_threshold }}</div>

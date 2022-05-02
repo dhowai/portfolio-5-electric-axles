@@ -11,8 +11,12 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="wrapper wrapper-content animated fadeInRight">
+<div class="container-fluid py-4">
+    <div class="container px-4 px-lg-5">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font">Your Basket</h2>
+            <hr class="mb-4">
+        </div>
         <div class="row">
             {% if basket_items %}
                 <div class="col-md-9">
@@ -142,14 +146,18 @@
                     </div>
                 </div>
             {% else %}
-                <div class="ibox-title">
-                    <h5>Your Basket is Empty</h5>
-                    <a href="{% url 'products' %}" class="fw-bold btn btn-outline-dark rounded-0 btn-lg">
-                        <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
-                        <span class="text-uppercase">Keep Shopping</span>
-                    </a>
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>Currently Empty</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <a href="{% url 'products' %}" class="fw-bold btn btn-outline-dark rounded-0 btn-lg">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="text-uppercase">Checkout The Store</span>
+                        </a> 
+                    </div>
                 </div>
             {% endif %}
         </div>
