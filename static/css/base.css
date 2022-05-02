@@ -489,23 +489,13 @@ div.social-links {
   }
 
   .btn.btn-outline-dark.rounded-0,
-  .btn.btn-black.rounded-0 {
-    padding: .375rem .375rem;
-  }
-
-  .btn.btn-outline-dark.rounded-0,
-  .btn.btn-black.rounded-0.btn-lg{
-    padding: .375rem .375rem;
-    font-size: .75rem;
-  }
-
+  .btn-outline-danger.rounded-0,
   .btn.btn-primary.rounded-0,
   .btn.btn-black.rounded-0 {
     padding: .375rem .375rem;
   }
 
-  .btn.btn-primary.rounded-0,
-  .btn.btn-black.rounded-0.btn-lg{
+  .btn.btn-outline-dark.rounded-0.btn-lg{
     padding: .375rem .375rem;
     font-size: .75rem;
   }
