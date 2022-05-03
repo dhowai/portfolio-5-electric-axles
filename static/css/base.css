@@ -458,7 +458,7 @@ div.social-links {
 }
 
 /* pad the top a bit when navbar is collapsed on mobile */
-@media (max-width: 991px) {
+@media (max-width: 1012px) {
   .header-container {
     padding-top: 100px;
   }
