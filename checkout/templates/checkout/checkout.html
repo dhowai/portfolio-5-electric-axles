@@ -23,10 +23,9 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="wrapper wrapper-content animated fadeInRight">
+    <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-12 col-lg-6">
                 <div class="ibox">
                     <div class="ibox-title">
                         <h5>Checkout</h5>
@@ -82,7 +81,7 @@
                                 <h5>Payment</h5>
                             </div>
                             <div class="col-md-12">
-                                <!-- A Stripe card element will go here -->
+                                <!-- Stripe Card Element -->
                                 <div class="mb-3" id="card-element"></div>
 
                                 <!-- Used to display form errors -->
@@ -98,7 +97,7 @@
                                     </span>
                                     <span class="text-uppercase">Adjust Basket</span>
                                 </a>
-                               
+                                
                                 <button id="submit-button" class="fw-bold btn btn-primary rounded-0">
                                     <span class="font-weight-bold">Complete Order</span>
                                     <span class="icon">
@@ -110,7 +109,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-12 col-lg-6">
                 <div class="ibox">
                     <div class="ibox-title">
                         <h5>Order Summary ({{ product_count }})</h5>
@@ -197,7 +196,6 @@
             </div>
         </div>
     </div>
-</div>
 {% endblock %}
 
 {% block postloadjs %}
