@@ -55,7 +55,7 @@ def product_detail(request, slug):
     """
     A view to show the product detail on their own page
     """
-    product = get_object_or_404(Product, slug=slug, in_stock=True)
+    product = get_object_or_404(Product, slug=slug, is_active=True)
     form = ReviewForm()
     return render(request, 'products/product_detail.html', {'product': product, 'form': form})
 
