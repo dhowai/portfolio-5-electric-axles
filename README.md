@@ -24,7 +24,6 @@ The live link can be found here: https://portfolio-5-electric-axles.herokuapp.co
 * [Features](#features)
     * [Existing Features](#existing-features)
     * [Features left to implement](#features-left-to-implement)
-* [Templates](#templates)
 * [Testing](#testing)
     * [User Stories Testing](#user-stories-testing)
     * [Code Validation](#code-validation)
@@ -221,20 +220,168 @@ SQLite was used during the development of the site and then moved to Postgres in
 
     - On these various pages, the user has options to change that filter according. Each sub product group also has links of the different categories in that sub group on the top of the page.
 
-    <img src="docs/readme/products-filter.png">
+    <img src="docs/readme/product-group-filter.png">
 
-    - When using the search bar, the user can see the result of their search directly on the page and a link to all product.
+    - When using the search bar, the user can see the result of their search directly on the page and an option to return to the all products page.
 
     <img src="docs/readme/product-search.png"> 
 
-    
+- The product Detials Page
 
+    - When a product is clicked on, the user is taken to that product full details page. There the user has the option to choose the quantity and add the item to their basket, logged in users have the additional option to add the item to their wishlist.
+    - Superusers have the additional option to edit/delete products.
+
+    <img src="docs/readme/product-details.png">
+
+    - Logged in users also have the option to leave a review, whereas guests are given the message to sign in or register an account to be able to do so.
+    - To leave a review a title, body and a rating is needed and on success is dislayed on the same page.
+
+    <img src="docs/readme/product-review.png">
+
+- Product Management 
+
+    - Superusers have the option to add/edit products on the store.
+    - There are options to take the superuser to these edit pages from the all products page or the product details page.
+    - On success they are redirected to the product details page for that item.
+
+    <img src="docs/readme/edit-product.png">
+
+- Profile
+
+    - Users can navigate to this page through the my account in the navigation bar.
+    - Here the user can update their shipping/billing information.
+    - There is also summary of the users transactions.
+
+    <img src="docs/readme/profile.png">
+
+- Wishlist
+
+    - This page is displays all the items the user has added on their wishlist.
+    - Only logged in users can add items to their wishlist.
+    - They can do so from the products or from the products details page.
+    - This page can be navigated to from the main nav at the top.
+    - On this page a user can remove these items from their wishlist or click on them and add them to their basket. 
+
+    <img src="docs/readme/wishlist.png">
+
+- The Basket
+
+    - After adding an item to the basket the user can navigate using the basket icon or the toast to the basket view.
+    - Here the user can see a summary of all the items currently in their basket.
+    - They can update the quantity of the product and delete the product from their basket.
+    - There is also a summary of the costs and buttons to either go back to the store or proceed to checkout.
+
+    <img src="docs/readme/basket.png">
+
+- Checkout
+
+    - Here the user can fill in their billing/shipping details to proceed with the transaction.
+    - A basket summary is also present.
+    - A logged in user also has the option to save their entered details to the users profile.
+    - Stripe was used for the payment method for this site.
+    - On checking out an overlay covers the screen as the information gets checked by stripe.
+
+    <img src="docs/readme/checkout.png">
+
+    <img src="docs/readme/overlay.png">
+
+- Checkout Success
+
+    - On success the user is taken to a success page showing a summary of the information entered.
+    - An email is also sent to the user using django and gmail. Giving them a copy of the transaction details.
+
+    <img src="docs/readme/checkout-success.png">
 
 [Back to Top](#table-of-contents)
 
 ## Features left to Implement
 
--   
+-   Possible features to add in future updates:
+    -   Add pagination for comments and produts page for better user experience.
+    -   Ability for users to delete their account.
+    -   Have a group in the navigation bar for new items, items on sale etc.
+    - (Add more)
+
+[Back to Top](#table-of-contents)
+
+# Testing
+
+## User Stories Testing
+
+-   First Time Visitor/User Goals
+
+    -   As a first User, I want to be able to easily navigate the site.
+    
+        -   When the visitor first enters the site they are greeted with a welcome message.
+        -   The homepage has brief information snippits about the site.
+        -   The user can browse by price, category, rating or by different product groups.
+
+    -   As a first time User, I want to have the ability to register on the site.
+
+        -   There is the my account on the navbar which gives options for the user to login or register.
+        -   When a user views a products detail page they can view the product reviews, but would need an account to post one. The relevent links can be found on that page to do so.
+    
+    -   As a first time User, I want to view the complete store content.
+
+        -   The user can view all content on the site with the relevant filter options.
+
+    -   As a first time User, I want to be able to purchase items.
+
+        -   The new user can purchase items on the site without the need for an account.
+        -   They would need to create an account to save their shipping/billing details.
+
+-   Returning Registered User Goals
+
+    -   As a registered User, I want to have the ability to login to the site with my credentials.
+
+        -   The user can do so from the navigation bar.
+        -   Or from any product details page, which requires them to login to post a review.
+
+    -   As a registered User, I want to be able to purchase items.
+
+        -   They can do so with additional benefits.
+    
+    -   As a registered User, I want to be able to save items for later purchase.
+
+        -   Users have an option to do so from the all products view or the product details page.
+        -   They can view them in the wishlist icon in the navbar.
+
+    -   As a registered User, I want to be able to edit/save any information I entered Prior.
+
+        -   The user can do so and have the additional option to save their information to their profile.
+        -   This creates a faster checkout process in the future.
+
+    -   As a registered User, I want to have the ability to logout of the site. 
+
+        -   From the navigation bar, the my account dropdown gives the user the option to logout.
+
+-   Frequent User Goals
+
+    -   As a frequent User, I want to easily find any new updates to the site.
+
+        -   When viewing the all products page the newest items are always displayed first.
+
+    -   As a frequent User, I want to easily purchase an item with previous information saved.
+
+        -   Registered users who have saved their information on checkout can use the same information on their newxt purchase.
+        -   This creates a faster checkout option for users.
+
+-   Administrator User Goals
+
+    -   As an Administrator, I want to be able to access the Administration panel.
+
+        -   The can access this django admin page by typing /admin at the end on the site name and login with their credentials.
+        -   Here they can edit all aspects of the site, from users, products and orders.
+
+    -   As an Administrator, I want to have the ability to manage site products.
+
+        -   They can do so from the django admin or from the site itselft.
+        -   There are options to edit/delete products from the all products page and the products details page.
+    
+    -   As an Administrator, i want to be able to give other users administrator abilities to help maintain the site
+
+        -   Admins can gives other users superuser permissions from the django admin sections.
+        -   This gives more users the ability to maintain the site.
 
 [Back to Top](#table-of-contents)
 
@@ -242,18 +389,20 @@ SQLite was used during the development of the site and then moved to Postgres in
 
 -   HTML
 
-    -   Each page of the site had their source page looked up and ran the HTML through the [W3C Validation](https://validator.w3.org/).
+    -   Used [W3C Validation](https://validator.w3.org/) to validate the HTML code.
+
+    <img src="docs/readme/html-validator.png">
 
 
 -   CSS
 
-    -   No errors were returned when passing through the official [(jigsaw) validatior](https://jigsaw.w3.org/css-validator)
+    -   Used [(jigsaw) validatior](https://jigsaw.w3.org/css-validator) to validate the CSS code.
 
-        <img src="">
+        <img src="docs/readme/css-validator.png">
 
 -   JavaScript
 
-    -   [JSHint](https://jshint.com/) was used to check for any major errors in the scripts. The only errors found were for the 'let' due to being only available in ES6.
+    -   [JSHint](https://jshint.com/) was used to check for any major errors in the scripts.
 
 -   Python Code
 
