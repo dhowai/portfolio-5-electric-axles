@@ -292,6 +292,14 @@ SQLite was used during the development of the site and then moved to Postgres in
 
     <img src="docs/readme/checkout-success.png">
 
+- Toasts 
+
+    - The site uses toasts from bootsrap to display all the relevent messages/actions from the site.
+    - There is a toasts for success, info, errors and for warnings.
+    - These toasts inform the user of different actions, such as displaying when items get succesffuly added to the basket.
+
+    <img src="docs/readme/toast-success.png">
+
 [Back to Top](#table-of-contents)
 
 ## Features left to Implement
@@ -300,6 +308,9 @@ SQLite was used during the development of the site and then moved to Postgres in
     -   Add pagination for comments and produts page for better user experience.
     -   Ability for users to delete their account.
     -   Have a group in the navigation bar for new items, items on sale etc.
+    -   Create own unique 404 and 500 error pages to redirect user to.
+    -   Use a modal as a confirmation before delelting a product from the site.
+    -   Have a custom page/message informing guest users to create an account to use wishlist feature.
     - (Add more)
 
 [Back to Top](#table-of-contents)
@@ -393,7 +404,6 @@ SQLite was used during the development of the site and then moved to Postgres in
 
     <img src="docs/readme/html-validator.png">
 
-
 -   CSS
 
     -   Used [(jigsaw) validatior](https://jigsaw.w3.org/css-validator) to validate the CSS code.
@@ -408,13 +418,90 @@ SQLite was used during the development of the site and then moved to Postgres in
 
     -   No errors were returned when testing python code with [PEP8](http://pep8online.com/) except for some instances where imports were asking for docstrings in github.
 
-        <img src="">
-
 ## Manual Testing
 
--  
+Google Chrome developer tools were used throughout the development process to test breaking points in the site.
 
-## Automated Testing 
+-   Toasts
+    - The site uses bootstrap toasts to display relevant validation inputs on the site.
+    - Success toast apears when items are added to th basket, removed from basket, logging in and much more.
+    - Info toast displays when editing products, viewing past orders etc.
+    - Error toast displays if any input was incorrect such as entering nothing in the search bar.
+
+    <img src="docs/readme/success-toast.png"> <img src="docs/readme/info-toast.png"> <img src="docs/readme/error-toast.png"> 
+
+-   Navigation Bar
+    - Navigation bar is responsive to different screen sizes. It is fully displayed on large to medium screens then condenses into icons for smaller screens.
+    - All links correctly redirect the user to the corresponing pages.
+    - User logged in can see the option to view their profile and logout.
+    - Superusers can see the additional option to manage products.
+
+-   Footer
+    - Links redirect to the correct social media on a new page.
+
+-   Products
+    - The default all products page displays products by the date the were added.
+    - The are displayed in cards and show the items name, price, rating and a link to their category.
+    - Logged in users have the additional option to add the item to their wishlist.
+    - Superusers have the aditional option to edit/delete the products.
+
+-   Product details
+    - These pages have the same information as the general all products page with the addition of adding the item to the shopping basket.
+    - Product details match the information in the database and get displayed correctly.
+    - Quantity buttons works, cant go less than 0 or highier that 20.
+    - Add to wishlist is only displayed for logged in users.
+    - If an item is not in stock a message gets displayed successfully and only logged users can add these items to their wishlist.
+    - The add to basket button gets removed if these conditions are met. 
+
+    <img src="docs/readme/product-not-in-stock.png">
+
+-   Reviews
+    - Displays all reviews made for that product and displays a message if they are no reviews made.
+    - Users can only post a review if logged in.
+    - The logged in user has the option to edit their review or even delete it if they choose. But, only if they were the user who created it.
+    - Superusers have the additional permission to edit or delete and review made.
+    - The toasts successfully display the messages to the page depening on what actions is being done.
+
+-   Wishlist
+    - Confirmed only logged in users can this feature.
+    - If empty a message gets displayed with a link to the store.
+    - Guest users are redirected to the sign in page if they click on the wishlist.
+    - Removing item from their wishlist works correctly.
+    - Toast uses info class to tell user which item was entered to wish list and when it was removed.
+
+-   Basket
+    - Icon in the navigation bar takes the user to the basket. The basket gets updated when items are added, updated and deleted.
+    - Basket icon changes color when items are added to the basket.
+    - Quantity buttons here reflect the quantity added from the product details page.
+    - Basket gets updated when adjustments are made here.
+    - Items in basket remain when user log in beforehand. Sign the session data is keep stored corectly.
+    - Correct totals and sub totals are correct.
+    - Free delivery is being calculated correctly. 
+
+-   Checkout
+    - Item data is the same from the basket page.
+    - Form validation works and informs what error is being made.
+    - Stripe correctly displays if the order is successful.
+    - Users billing/shipping details get populated if it was saved previously. 
+    - Stripe webhook shows if the order was created from the database or had to be created from the webhook data on stripes payment intent succeeded event with 200 response.
+    - Stripe test card input `4242 4242 4242 4242` works when completing an order.
+    - Overlay covers screen when information is entered.
+    - An error in the card information displays correctly.
+    - Success toast displays with order number on success payment.
+    - Redirects to checkout success page if form validation matches stripes.
+
+    <img src="docs/readme/stripe.png">
+
+-   Admin
+    - Only admins have access to product management page from the my account dropdown.
+    - Only admins can see and use the edit/delete products.
+    - Product management goes to the correct page to add an item.
+    - The correct details appear from the database in from when editing a product.
+    - Toasts successfuly appear when superuser is editing a prouct, edited a product and deleted a product.
+
+
+
+## Automated Testing  
 
 - 
 [Back to Top](#table-of-contents)
