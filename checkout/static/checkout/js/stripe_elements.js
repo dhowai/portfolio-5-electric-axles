@@ -47,7 +47,7 @@ card.addEventListener('change', function (event) {
             $(errorDiv).html(html);
     } else {
         errorDiv.textContent = '';
-    };
+    }
 });
 
 // Handle the form submit
@@ -121,5 +121,5 @@ form.addEventListener('submit', function(ev) {
     }).fail(function () {
         // just reload the page, the error will be in the django messages
         location.reload();
-    })
+    });
 });

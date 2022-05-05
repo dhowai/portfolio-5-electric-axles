@@ -43,12 +43,15 @@ def all_products(request):
                 messages.error(request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(
+                name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
 
-    return render(request, 'products/products.html', {'products': products, 'search_term': query, 'current_categories': categories, 'current_sorting': current_sorting})
+    return render(request, 'products/products.html', {
+        'products': products, 'search_term': query,
+        'current_categories': categories, 'current_sorting': current_sorting})
 
 
 def product_detail(request, slug):
@@ -57,7 +60,9 @@ def product_detail(request, slug):
     """
     product = get_object_or_404(Product, slug=slug, is_active=True)
     form = ReviewForm()
-    return render(request, 'products/product_detail.html', {'product': product, 'form': form})
+    return render(
+        request, 'products/product_detail.html', {
+            'product': product, 'form': form})
 
 
 def categories(request):
@@ -80,10 +85,12 @@ def add_product(request):
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save()
-            messages.info(request, f'Successfully added product {product.name}')
+            messages.info(request, f'Successfully added product \
+                 {product.name}')
             return redirect(reverse('product_detail', args=[product.slug]))
         else:
-            messages.error(request, 'Failed to add product due to invalid form.')
+            messages.error(request, 'Failed to add product due \
+                to invalid form.')
     else:
         form = ProductForm()
 
@@ -107,13 +114,16 @@ def edit_product(request, slug):
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
-            messages.info(request, f"Successfully updated product {product.name}'s details")
+            messages.info(request, f"Successfully updated product \
+                {product.name}'s details")
             return redirect(reverse('product_detail', args=[product.slug]))
         else:
-            messages.error(request, 'Failed to edit product due to invalid form.')
+            messages.error(request, 'Failed to edit product due to \
+                invalid form.')
     else:
         form = ProductForm(instance=product)
-        messages.info(request, f"You are editing product {product.name}'s details")
+        messages.info(request, f"You are editing product {product.name}'s \
+            details")
 
     template = 'products/edit_product.html'
     context = {
@@ -151,10 +161,12 @@ def add_review(request, slug):
                 review.product = product
                 review.user = request.user
                 review.save()
-                messages.success(request, f'Your review called {review.title} for {review.product} has been Posted Successfully')
+                messages.success(request, f'Your review called {review.title} for {review.product} \
+                    has been Posted Successfully')
                 return redirect(reverse('product_detail', args=[product.slug]))
             else:
-                messages.error(request, 'Failed to post Review, please try again later')
+                messages.error(request, 'Failed to post Review, \
+                    please try again later')
 
     return render(request, {'form': form})
 
@@ -171,17 +183,22 @@ def edit_review(request, review_id):
         form = ReviewForm(request.POST, instance=review)
         if form.is_valid():
             form.save()
-            messages.info(request, f'Your Review Called {review.title} has been updated Successfully')
+            messages.info(request, f'Your Review Called {review.title} has been \
+                updated Successfully')
             return redirect(reverse('product_detail', args=[product.slug]))
         else:
-            messages.error(request, 'Review edit failed, please try again later')
+            messages.error(request, 'Review edit failed, \
+                please try again later')
     else:
         form = ReviewForm(instance=review)
 
-    messages.info(request, f'You are editing your review called {review.title}')
+    messages.info(request, f'You are editing your review called \
+        {review.title}')
     template = 'products/product_detail.html'
 
-    return render(request, template, {'form': form, 'review': review, 'product': product, 'edit': True})
+    return render(request, template, {
+        'form': form, 'review': review, 'product': product,
+        'edit': True})
 
 
 @login_required
@@ -190,5 +207,6 @@ def delete_review(request, review_id):
     review = get_object_or_404(ProductReview, pk=review_id)
     product = review.product
     review.delete()
-    messages.success(request, f'Your review called {review.title} has been deleted successfully')
+    messages.success(request, f'Your review called {review.title} \
+        has been deleted successfully')
     return redirect(reverse('product_detail', args=[product.slug]))

@@ -45,6 +45,10 @@ section {
   padding-bottom: 5rem;
 }
 
+.list-group-horizontal {
+  display: contents;
+}
+
 .icon {
   align-items: center;
   display: inline-flex;

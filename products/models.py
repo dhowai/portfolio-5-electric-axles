@@ -17,12 +17,14 @@ class Category(models.Model):
 
 class Product(models.Model):
     """A model for the products"""
-    category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey(
+        Category, null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    rating = models.DecimalField(
+        max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     has_sizes = models.BooleanField(default=False, null=True, blank=True)
@@ -47,8 +49,11 @@ class Product(models.Model):
 
 class ProductReview(models.Model):
     """A model for product reviews"""
-    product = models.ForeignKey(Product, null=True, blank=True, on_delete=models.SET_NULL, related_name='reviews')
-    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
+    product = models.ForeignKey(
+        Product, null=True, blank=True, on_delete=models.SET_NULL,
+        related_name='reviews')
+    user = models.ForeignKey(
+        User, null=True, blank=True, on_delete=models.CASCADE)
     title = models.CharField(max_length=250)
     body = models.TextField()
     select_rating = (

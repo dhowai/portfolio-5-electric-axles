@@ -28,7 +28,8 @@ def add_to_wishlist(request, slug):
 
     wishlist, _ = WishList.objects.get_or_create(user=request.user)
     wishlist.products.add(product)
-    messages.info(request, f'Added {product.name} to your Wishlist Successfully')
+    messages.info(request, f'Added {product.name} \
+        to your Wishlist Successfully')
 
     return redirect(request.META.get('HTTP_REFERER'))
 
@@ -42,6 +43,7 @@ def remove_from_wishlist(request, slug):
     wishlist = WishList.objects.get(user=request.user)
 
     wishlist.products.remove(product)
-    messages.info(request, f'Removed {product.name} from your Wishlist Successfully')
+    messages.info(request, f'Removed {product.name} \
+        from your Wishlist Successfully')
 
     return redirect(request.META.get('HTTP_REFERER'))
