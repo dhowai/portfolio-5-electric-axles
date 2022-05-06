@@ -74,4 +74,8 @@
         </li>
 
     </ul>
+    <form class="d-flex d-block d-lg-none" method="GET" action="{% url 'products' %}">
+        <input class="form-control me-2" type="text" name="q" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
 </div>
