@@ -33,11 +33,16 @@ h6 {
   padding-bottom: 6rem;
 }
 
-.bg-home {
-  background-image: url("/media/okai-vehicles-XCtN1IR1qOI-unsplash.jpg");
-  height: 50vh;
-  background-size: cover;
-  background-position: center center;
+.nav-link:hover {
+  background-color: #343a40;
+}
+
+.jumbotron {
+  background-color: #00adad;
+}
+
+.bc {
+  background-color: #000;
 }
 
 section {
@@ -187,12 +192,12 @@ a.category-badge>span.badge:hover {
 }
 
 .allauth-form-inner-content a {
-  color: #17a2b8;
+  color: #00adad;
   /* text-info */
 }
 
 .text-navy {
-  color: #1ab394;
+  color: #00adad;
 }
 
 .product-imitation.xl {
@@ -454,14 +459,14 @@ div.social-links {
   }
 
   .header-container {
-    padding-top: 160px;
+    padding-top: 140px;
   }
 }
 
 /* pad the top a bit when navbar is collapsed on mobile */
-@media (max-width: 1012px) {
+@media (max-width: 991px) {
   .header-container {
-    padding-top: 100px;
+    padding-top: 79px;
   }
 
   body {

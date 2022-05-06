@@ -36,6 +36,7 @@ class Order(models.Model):
     original_basket = models.TextField(null=True, blank=False, default='')
     stripe_pid = models.CharField(
         max_length=250, null=False, blank=False, default='')
+    objects = models.Manager()
 
     def _generate_order_number(self):
         """

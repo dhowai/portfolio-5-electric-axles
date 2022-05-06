@@ -311,6 +311,7 @@ SQLite was used during the development of the site and then moved to Postgres in
     -   Create own unique 404 and 500 error pages to redirect user to.
     -   Use a modal as a confirmation before delelting a product from the site.
     -   Have a custom page/message informing guest users to create an account to use wishlist feature.
+    -   Implement Django package called MPTT which creates dynamic groups, to creates better grouping of products.
     - (Add more)
 
 [Back to Top](#table-of-contents)
@@ -416,7 +417,8 @@ SQLite was used during the development of the site and then moved to Postgres in
 
 -   Python Code
 
-    -   No errors were returned when testing python code with [PEP8](http://pep8online.com/) except for some instances where imports were asking for docstrings in github.
+    -   No errors were returned when testing python code with [PEP8](http://pep8online.com/)
+    -   Except for some instances where imports were asking for docstrings in github and class 'x' has no 'DoesNotExist' member which is a warning from pylint. Django adds the `objects` and 'DoesNotExist' properties to all model classes, so the IDE isn't aware of this.
 
 ## Manual Testing
 
@@ -441,6 +443,7 @@ Google Chrome developer tools were used throughout the development process to te
 
 -   Products
     - The default all products page displays products by the date the were added.
+    - Products that are not active can only be viewed in the django admin.
     - The are displayed in cards and show the items name, price, rating and a link to their category.
     - Logged in users have the additional option to add the item to their wishlist.
     - Superusers have the aditional option to edit/delete the products.
@@ -460,7 +463,10 @@ Google Chrome developer tools were used throughout the development process to te
     - Users can only post a review if logged in.
     - The logged in user has the option to edit their review or even delete it if they choose. But, only if they were the user who created it.
     - Superusers have the additional permission to edit or delete and review made.
+    - Edit review uses the same form as add review and the data gets populated correctly.
     - The toasts successfully display the messages to the page depening on what actions is being done.
+
+    <img src="docs/readme/edit-review.png">  <img src="docs/readme/review-options.png"> 
 
 -   Wishlist
     - Confirmed only logged in users can this feature.

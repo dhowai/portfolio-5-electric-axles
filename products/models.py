@@ -6,13 +6,14 @@ from django.contrib.auth.models import User
 class Category(models.Model):
     """A model for product categories"""
     name = models.CharField(max_length=250, db_index=True)
+    objects = models.Manager()
 
     class Meta:
         """ Correct plural for category in admin"""
         verbose_name_plural = 'categories'
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
 
 class Product(models.Model):
@@ -32,6 +33,7 @@ class Product(models.Model):
     is_active = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    objects = models.Manager()
 
     class Meta:
         """Order by product created"""
@@ -44,7 +46,7 @@ class Product(models.Model):
         return reverse('product_detail', args=[self.slug])
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
 
 class ProductReview(models.Model):
@@ -67,7 +69,8 @@ class ProductReview(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
 
     class Meta:
+        """Data ordering"""
         ordering = ['-date_added']
 
     def __str__(self):
-        return self.title
+        return str(self.title)

@@ -7,7 +7,7 @@ from .forms import UserProfileForm
 
 
 @login_required
-def profile(request):
+def user_profile(request):
     """Display user profile"""
     profile = get_object_or_404(UserProfile, user=request.user)
 
