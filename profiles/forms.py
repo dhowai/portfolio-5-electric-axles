@@ -5,6 +5,7 @@ from .models import UserProfile
 class UserProfileForm(forms.ModelForm):
     """Form for entering order details """
     class Meta:
+        """Form data"""
         model = UserProfile
         exclude = ('user',)
 
@@ -31,6 +32,6 @@ class UserProfileForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'border-black rounded-0 \
-                profile-form-input mb-2'
+            self.fields[field].widget.attrs['class'] = 'form-control \
+                profile-form-input mb-3'
             self.fields[field].label = False
