@@ -128,8 +128,11 @@
                             <form method="POST" class="align-items-center" action="{% url 'edit_review' review.id %}#reviews">
                                 {% csrf_token %}
                                 {{ form | crispy }}
-                                <div class="d-flex justify-content-end">
-                                    <button class="fw-bold btn btn-outline-dark rounded-0 text-uppercase mt-2" type="submit">Update Review</button>
+                                <div class="d-flex justify-content-between">
+                                    <a class="fw-bold btn btn-outline-danger rounded-0 text-uppercase" href="{% url 'delete_review' review.id %}#reviews">
+                                        Delete
+                                    </a>
+                                    <button class="fw-bold btn btn-outline-dark rounded-0 text-uppercase" type="submit">Update Review</button>
                                 </div>
                             </form>
                         </div>
