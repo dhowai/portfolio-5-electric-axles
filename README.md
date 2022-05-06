@@ -483,22 +483,44 @@ Google Chrome developer tools were used throughout the development process to te
     - Form validation works and informs what error is being made.
     - Stripe correctly displays if the order is successful.
     - Users billing/shipping details get populated if it was saved previously. 
-    - Stripe webhook shows if the order was created from the database or had to be created from the webhook data on stripes payment intent succeeded event with 200 response.
     - Stripe test card input `4242 4242 4242 4242` works when completing an order.
     - Overlay covers screen when information is entered.
     - An error in the card information displays correctly.
     - Success toast displays with order number on success payment.
     - Redirects to checkout success page if form validation matches stripes.
+    - Stripe webhook shows if the order was created from the database or had to be created from the webhook data on stripes payment intent succeeded event with 200 response.
+    - An email successfully gets sent to the user about order details.
 
-    <img src="docs/readme/stripe.png">
+    <img src="docs/readme/stripe.png"> 
+    
+    <img src="docs/readme/confirmation-email.png">
 
 -   Admin
     - Only admins have access to product management page from the my account dropdown.
     - Only admins can see and use the edit/delete products.
     - Product management goes to the correct page to add an item.
-    - The correct details appear from the database in from when editing a product.
+    - The correct details appear from the database in the form when editing a product.
     - Toasts successfuly appear when superuser is editing a prouct, edited a product and deleted a product.
 
+-   Product Management
+    - Product successfully gets added to store using form.
+    - Products can be edited and changes display correctly.
+    - Form validattion works when field is required.
+    - Gets directed the product details page after adding/editing a product.
+    - Toast informs user accordingly.
+
+-   Search 
+    - Search parameters work accordingly.
+    - Search finds keywords from the product name or description.
+    - Results for search are displaed for user.
+
+-   Heroku Config Vars
+    - Variables stated in the heroku config vars are working accordingly.
+    - Static files are succesfully updated to AWS when files are commited to Heroku.
+    - Email variable works as emails get sent to user on successful order.
+    - Stripe is connected correctly as 200 responses post in developers webhooks on succesfully orders and more.
+
+    <img src="docs/readme/heroku-config-vars.png">
 
 
 ## Automated Testing  
