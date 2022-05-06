@@ -10,15 +10,29 @@
 {% endblock %} 
 
 {% block content %}
-    <!-- Navigation-->
-    <div class="bg-home text-white banner">
-        <div class="container px-4 text-center">
-            <h1 class="fw-bolder">Welcome to Electric Axles</h1>
-            <p class="lead">A Place All About Electric Rides!</p>
+    <div id="carouselFade" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner bc">
+            <div class="carousel-item active">
+                <img src="/media/javygo-7f6dk5M2XMs-unsplash.jpg" class="img-fluid mx-auto d-block" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="/media/okai-vehicles-XCtN1IR1qOI-unsplash.jpg" class="img-fluid mx-auto d-block" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="/media/geo-chierchia-qZ1KmFjfQq8-unsplash.jpg" class="img-fluid mx-auto d-block" alt="...">
+            </div>
         </div>
+        <a class="carousel-control-prev" href="#carouselFade" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselFade" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
-    <!-- About section-->
-    <section id="about">
+     <!-- About section-->
+     <section id="about">
         <div class="container px-4">
             <div class="row gx-4 justify-content-center">
                 <div class="col-lg-8">
@@ -58,25 +72,4 @@
             </div>
         </div>
     </section>
-    <!-- Footer-->
-    <footer class="footer">
-        <div class="row">
-            <div class="col-sm-6 col-md-4 footer-navigation">
-                <h3><a href="{% url 'home' %}"><span>Electric</span>Axles</a></h3>
-                <p class="company-name">electricaxles.com © 2022</p>
-            </div>
-            <div class="col-sm-6 col-md-4 footer-about">
-                <h4>About the author</h4>
-                <p>Looking to learn and progress as a new Developer</p>
-                <div class="social-links social-icons">
-                    <a href="https://www.linkedin.com/in/daryl-howai-934444211/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/dhowai" target="_blank"><i class="fab fa-github-square"></i></a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 py-3 footer-about">
-                <h4>About the Site</h4>
-                <p>This site is dedicated to selling electric vehilces</p>
-            </div>
-        </div>
-    </footer>
 {% endblock %}
