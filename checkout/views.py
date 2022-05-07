@@ -16,7 +16,8 @@ from .models import Order, OrderLineItem
 @require_POST
 def cache_checkout_data(request):
     """
-    Determine whether the user had the save user box checked
+    Determine whether the user data is saved and can
+    be used.
     """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
@@ -35,7 +36,7 @@ def cache_checkout_data(request):
 
 def checkout(request):
     """
-    View that checkouts sdfgs
+    View that checkouts items with stripe
     """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY

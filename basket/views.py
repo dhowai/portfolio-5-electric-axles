@@ -11,7 +11,8 @@ def view_basket(request):
 
 
 def add_to_basket(request, item_id):
-    """ Add a quantity of the specific product to the shopping bag """
+    """ Add a quantity of the specific product to the shopping basket,
+    checks if item is already in the basket and if it has sizes."""
 
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))

@@ -5,7 +5,9 @@ from products.models import Product
 
 
 def basket_contents(request):
-    """ A way to view the basket anywhere on the site """
+    """ A way to get all the items in the basket
+    and calulated the total cost and if
+    free delivery threshold is met. """
     basket_items = []
     total = 0
     product_count = 0
