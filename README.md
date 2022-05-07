@@ -204,7 +204,9 @@ SQLite was used during the development of the site and then moved to Postgres in
     <img src="docs/readme/home-info.png"> 
 
 - Footer 
-    - Here the user can find out more about the developer with links to their social accounts. It also has a short description of the site(add contact us option?)
+    - Here the user can find out more about the developer with links to their social accounts.
+    - There is a form where the user can leave them email to sign up for the sites newsletter.
+    - The user is the informed if they have been successfully signed up to the newsletter.
 
     <img src="docs/readme/footer.png"> 
 
@@ -314,6 +316,7 @@ SQLite was used during the development of the site and then moved to Postgres in
     -   Have a custom page/message informing guest users to create an account to use the wishlist feature.
     -   Have an add-to-basket functionality from the wishlist page.
     -   Implement a Django package called MPTT which creates dynamic groups, to create a better grouping of products.
+    -   Improve newsletter functionality with mailchimp, have a better success page displaying more information to the user.
 
 
 [Back to Top](#table-of-contents)
@@ -460,6 +463,9 @@ Google Chrome developer tools were used throughout the development process to te
 
 -   Footer
     - Links redirect to the correct social media on a new page.
+    - Mailchimp was used to get the users email and to add them to the sites newsletter.
+    - After subscribing to the newsletter, a pop up infroms the user they have been added to the newsletter list.
+    - This is reflected in mailchimps contacts overview.
 
 -   Products
     - The default all products page displays products by the date they were added.
@@ -560,7 +566,8 @@ Google Chrome developer tools were used throughout the development process to te
 
 -   Users who have items in their basket who then log out lose their items in their basket.
 -   Due to the different sizes of the product images used, in the all products view, the images of the different items don't quite match up.
-
+-   After completing the newsletter form the users email remains in the field, until the user refreshes the page.
+-   Hompage images are too large and user might not know of content below. Images on change moves the whole page.
 
 # Deployment
 
