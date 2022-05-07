@@ -1,6 +1,6 @@
 <h1 align="left">Electric Axles</h1>
 
-<img src="docs/readme/">
+<img src="docs/readme/responsive.png">
 
 This project was focused on creating a Full Stack developed fictional e-commerce store using the Django Framework, Python, HTML, CSS, and Javascript.
 The project also uses stripe for online test payments and Heroku Postgres as a relational database.
@@ -629,7 +629,7 @@ The master branch of this repository has been used for the deployment version of
 
 - [Unsplash](https://unsplash.com/) for homepage images.
 - [Ride and Glide](https://www.rideandglide.co.uk/) for the product images.
-- Startbootsrap for verious templates [products](https://startbootstrap.com/template/shop-homepagehttps://startbootstrap.com/template/shop-homepage) [Shop-item](https://startbootstrap.com/template/shop-item) [homepage](https://startbootstrap.com/template/scrolling-nav)
+- Startbootsrap for verious templates [products](https://startbootstrap.com/template/shop-homepage) [Shop-item](https://startbootstrap.com/template/shop-item) [homepage](https://startbootstrap.com/template/scrolling-nav)
 - [Bootdey](https://www.bootdey.com/snippets/view/shopping-cart-checkout#html) for shopping cart format. 
 
 # Acknowledgements

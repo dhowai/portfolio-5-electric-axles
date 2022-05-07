@@ -124,9 +124,18 @@ a.category-badge>span.badge:hover {
   /* text-secondary */
 }
 
+.allauth-form-inner-content div {
+  
+ padding-bottom: 0.5rem;
+}
+
 .allauth-form-inner-content input {
   border-color: #000;
   border-radius: 0;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+  display: none;
 }
 
 .allauth-form-inner-content input::placeholder {
@@ -162,6 +171,11 @@ a.category-badge>span.badge:hover {
 
 .allauth-form-inner-content a {
   color: #00adad;
+  /* text-info */
+}
+.allauth-form-inner-content a:hover {
+  color: white;
+  background-color: #000;
   /* text-info */
 }
 
