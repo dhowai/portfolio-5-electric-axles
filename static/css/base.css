@@ -371,6 +371,26 @@ div.social-links {
   }
 }
 
+/* Error pages */
+
+.error-container {
+  position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 60vh;
+}
+
+.error-content {
+	position: relative;
+	width: 600px;
+	max-width: 100%;
+	margin: 20px;
+	padding: 60px 40px;
+	text-align: center;
+	box-shadow: -10px 10px 67px -12px rgba(0, 0, 0, 0.2);
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */

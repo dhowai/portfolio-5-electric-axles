@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+<title>{% block extra_title %}500 - {% endblock %}</title>
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %} 
+
+{% block content %}
+    <div class="error-container">
+        <div class="error-content lead fw-bold">
+            <p class="text-uppercase">error 500</p>
+            <p class="text-capitalize">please contact the site administrator</p>
+            <a class="fw-bold btn btn-outline-dark rounded-0 text-uppercase mt-3" href="{% url 'home' %}">back to safety</a>
+        </div>
+    </div>
+{% endblock %}
