@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://portfolio-5-electric-axles.herokuapp.com/sitemap.xml
