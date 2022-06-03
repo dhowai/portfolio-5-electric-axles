@@ -26,7 +26,5 @@
         </div>
     </div>
 </form>
-<div class="d-flex justify-content-between">
-    <a class="update-link text-info"><i class="fa-solid fa-arrows-rotate"></i> Update</a>
-    <a class="remove-item text-danger" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><i class="fa fa-trash"></i> Remove</a>
-</div>
+<a class="update-link text-info float-start"><i class="fa-solid fa-arrows-rotate"></i>Update</a>
+<a class="remove-item text-danger float-end" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><i class="fa fa-trash"></i>Remove</a>
