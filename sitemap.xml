@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/accounts/login/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/accounts/login/?next=/wishlist/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/basket/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/?sort=price&amp;direction=asc</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/?sort=rating&amp;direction=desc</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/?sort=category&amp;direction=asc</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/?category=Onewheel</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/?category=Evolve</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/?category=Onewheel,Evolve</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/?category=Stealth</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/?category=Zooz</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/?category=Super73</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/?category=Stealth,Zooz,Super73</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/?category=Aer</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/?category=Nami</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/?category=Apollo</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/?category=Aer,Nami,Apollo</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/?category=Inmotion</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/?category=Kingsong</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/?category=Inmotion,Kingsong</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/?category=Helmets</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/?category=Pads</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/?category=Gloves</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/?category=Helmets,Pads,Gloves</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/accounts/signup/?next=%2Fwishlist%2F</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/sixsixone-raji-gloves/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/triple-8-kp-22-kneepad/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/triple-8-exoskin-elbow-pads/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/triple-8-bumsaver-protective-shorts/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/triple-8-hired-hand-gloves/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/triple-8-slider-gloves/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/evolve-helmet/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/onewheel-s1-retro-helmet/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/closca-helmet/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/apollo-air-pro/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/apollo-city/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/onewheel-pint/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/evolve-stoke/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/apollo-explore/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/onewheel-pint-x/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/stealth-p-7/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/onewheel-xr/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/evolve-gtr-carbon-2-in-1/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/kingsong-ks-s18/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/onewheel-gt/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/zooz-urban-ultralight-250/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/inmotion-v12/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/super73-zx/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/?category=Super%2073</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/aer-557/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/zooz-urban-ultralight-750/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/zooz-urban-ultralight-1100/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/nami-burn-e/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/super73-s2/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/products/super73-rx/</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-electric-axles.herokuapp.com/accounts/login/?next=%2Fwishlist%2F</loc>
+  <lastmod>2022-06-03T16:05:13+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
+</urlset>
