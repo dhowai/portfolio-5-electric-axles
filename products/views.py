@@ -143,9 +143,15 @@ def delete_product(request, slug):
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, slug=slug)
-    product.delete()
-    messages.info(request, f'Product {product.name} Deleted!')
-    return redirect(reverse('products'))
+    if request.method == 'POST':
+        product.delete()
+        messages.success(request, f'Product {product.name} Deleted!')
+        return redirect(reverse('products'))
+    else:
+        messages.info(request, f"You are about to delete {product.name} \
+            from the store")
+
+    return render(request, 'products/delete_product.html', {'product': product})
 
 
 @login_required

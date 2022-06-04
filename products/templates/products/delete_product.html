@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+
+<title>{% block extra_title %}Management - {% endblock %}</title>
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-lg-8 offset-lg-2">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h2>Product Management</h2>
+                </div>
+                <div class="ibox-content">
+                    <h5 class="text-muted">Delete a Product</h5>
+                    <div class="container-fluid py-4">
+                        <div class="container px-4 px-lg-5">
+                            <div class="card h-100">
+                                <form method="POST" action="{% url 'delete_product' product.slug %}" class="form mb-2" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {% if product.image %}
+                                        <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">   
+                                    {% else %}
+                                        <img class="card-img-top img-fluid" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="{{ product.name }}">
+                                    {% endif %}
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <!-- Product name-->
+                                            <h5 class="d-block p-2 bg-dark text-white">{{ product.name|upper }}</h5>
+                                            <!-- Product price-->
+                                            <p class="lead fw-bold">£{{ product.price }}</p>
+                                            <!-- Product rating-->
+                                            {% if product.rating %}
+                                                <p class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</p>
+                                            {% else %}
+                                                <p class="text-muted ">Not Rated</p>
+                                            {% endif %}
+                                            {% if product.category %}
+                                                <p class="small">
+                                                    <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                                                        <i class="fas fa-tag mr-1"></i>{{ product.category.name }}
+                                                    </a>
+                                                </p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="d-grid d-md-flex justify-content-md-end py-2">
+                                        <a class="fw-bold btn btn-outline-dark rounded-0 text-uppercase me-md-2" href="{% url 'products' %}">Cancel</a>
+                                        <button type="submit" class="btn btn-outline-danger text-uppercase rounded-0 fw-bold me-md-2">Delete Product</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
