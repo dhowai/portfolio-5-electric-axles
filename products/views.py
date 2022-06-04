@@ -151,7 +151,8 @@ def delete_product(request, slug):
         messages.info(request, f"You are about to delete {product.name} \
             from the store")
 
-    return render(request, 'products/delete_product.html', {'product': product})
+    return render(
+        request, 'products/delete_product.html', {'product': product})
 
 
 @login_required
