@@ -205,16 +205,16 @@ SQLite was used during the development of the site and then moved to Postgres in
 
 - Footer 
     - Here the user can find out more about the developer with links to their social accounts.
-    - There is a form where the user can leave them email to sign up for the sites newsletter.
-    - The user is the informed if they have been successfully signed up to the newsletter.
+    - There is a form where the user can leave their email to sign up for the sites newsletter.
+    - The user is informed if they have been successfully signed up to the newsletter.
 
     <img src="docs/readme/footer.png"> 
 
-- The register/login page
+- The register/sign in page
     - The registration/login pages use the Django-allauth package. The forms used are extended from the respected allauth templates and styled with crispy forms.
     - These forms have validations that tell the user if any data they entered is invalid.
 
-    <img src="docs/readme/"> 
+    <img src="docs/readme/signup-page.png"> 
 
 - The Product/Store Page
     - The store pages have various filter options in place. They are categorized by price, rating, category, and name.
@@ -236,18 +236,18 @@ SQLite was used during the development of the site and then moved to Postgres in
 
     <img src="docs/readme/product-details.png">
 
-    - Logged-in users also have the option to leave a review, whereas guests are given the message to sign in or register an account to be able to do so.
+    - Logged-in users also have the option to leave a review, whereas guests are informed to sign in or register an account to be able to do so.
     - To leave a review a title, body, and rating is needed and on success is displayed on the same page.
 
     <img src="docs/readme/product-review.png">
 
 - Product Management 
 
-    - Superusers have the option to add/edit products on the store.
-    - There are options to take the superuser to these edit pages from the all products page or the product details page.
-    - On success, they are redirected to the product details page for that item.
+    - Superusers have the option to add/edit/delete products on the store.
+    - There are options to take the superuser to these edit/delete pages from the all products page or the product details page.
+    - On success, they are redirected to the product details page for that item or the products page.
 
-    <img src="docs/readme/edit-product.png">
+    <img src="docs/readme/edit-product.png"> <img src="docs/readme/delete-product.png">
 
 - Profile
 
@@ -311,12 +311,10 @@ SQLite was used during the development of the site and then moved to Postgres in
     -   Add pagination for comments and products page for better user experience.
     -   Ability for users to delete their account.
     -   Have a group in the navigation bar for new items, items on sale, etc.
-    -   Create own unique 404 and 500 error pages to redirect users to.
-    -   Use a modal as a confirmation before deleting a product from the site.
     -   Have a custom page/message informing guest users to create an account to use the wishlist feature.
     -   Have an add-to-basket functionality from the wishlist page.
     -   Implement a Django package called MPTT which creates dynamic groups, to create a better grouping of products.
-    -   Improve newsletter functionality with mailchimp, have a better success page displaying more information to the user.
+    -   Create a newsletter and send to subscribers with mailchimp.
 
 
 [Back to Top](#table-of-contents)
@@ -335,6 +333,8 @@ SQLite was used during the development of the site and then moved to Postgres in
 -   A markup Facebook page was created for the fictional store.
 
    <img src="docs/readme/facebook-template.png"> <img src="docs/readme/seo.png"> 
+
+With this information the eCommerce application would be a business-to-customer model (B2C) where products will be sold using single payments. The site will promote the benefits of personal electric vehicles for the user and the environment. It would need to use social media marketing to demonstrate the different devices and how they function. The site would have an easy payment method with stripe, an authentication system, search functionality, user reviews, and ratings.
 
 # Testing
 
@@ -463,8 +463,8 @@ Google Chrome developer tools were used throughout the development process to te
 
 -   Footer
     - Links redirect to the correct social media on a new page.
-    - Mailchimp was used to get the users email and to add them to the sites newsletter.
-    - After subscribing to the newsletter, a pop up infroms the user they have been added to the newsletter list.
+    - Mailchimp was used to get the users email and adds them to a contact list.
+    - After subscribing to the newsletter, a success message is displayed.
     - This is reflected in mailchimps contacts overview.
 
 -   Products
@@ -488,7 +488,7 @@ Google Chrome developer tools were used throughout the development process to te
     - Displays all reviews made for that product and displays a message if they are no reviews made.
     - Users can only post a review if logged in.
     - The logged-in user has the option to edit their review or even delete it if they choose. But, only if they were the user who created it.
-    - Superusers have additional permission to edit or delete and review made.
+    - Superusers have additional permission to edit or delete any review made.
     - Edit review uses the same form as add review and the data gets populated correctly.
     - The toasts successfully display the messages to the page depending on what actions are being done.
 
@@ -507,8 +507,8 @@ Google Chrome developer tools were used throughout the development process to te
     - Quantity buttons here reflect the quantity added from the product details page.
     - Basket gets updated when adjustments are made here.
     - Items in the basket remain when the user logs in beforehand. Sign the session data is kept stored correctly.
-    - Correct totals and subtotals are correct.
-    - Free delivery is being calculated correctly. 
+    - Totals and subtotals are correctly calculated.
+    - Free delivery is calculated correctly. 
 
 -   Checkout
     - Item data is the same as the basket page.
@@ -554,20 +554,29 @@ Google Chrome developer tools were used throughout the development process to te
 
     <img src="docs/readme/heroku-config-vars.png">
 
+-   Error Pages
+    - Custom error pages of 404(page not found) and 500(internal server) are displayed accordingly.
+    - Link takes the user back to homepage.
+    
+    <img src="docs/readme/error-404.png"> <img src="docs/readme/error-500.png">
+
 [Back to Top](#table-of-contents)
 
 ## Automated Testing  
 
-- Not automated testing was done for this project.
+- No automated testing was done for this project.
 - Ideally, class-based views should have been used to make this process more manageable.
 
 
 # Bugs
 
--   Users who have items in their basket who then log out lose their items in their basket.
+-   Users who have items in their basket who then log out lose their items.
 -   Due to the different sizes of the product images used, in the all products view, the images of the different items don't quite match up.
--   After completing the newsletter form the users email remains in the field, until the user refreshes the page.
 -   Hompage images are too large and user might not know of content below. Images on change moves the whole page.
+
+## Bugs Solved
+
+-   The update and delete from basket buttons were placed in a div to give the CSS properties, this caused the update button to no longer function. Buttons were then placed without the div and given different bootsrap CSS properties to achieve the same look with the addition of both buttons working as intended.
 
 # Deployment
 
@@ -604,13 +613,39 @@ The master branch of this repository has been used for the deployment version of
     - In the terminal type 'git clone & then paste the link you copied in GitHub
     - Press enter and your local clone will be created.
 
+## Gmail SMTP
+
+- Gmail SMTP was used to send emails for user related features with Allauth and confirmation emails on orders.
+- Used the following [documentation](https://kb.synology.com/en-br/SRM/tutorial/How_to_use_Gmail_SMTP_server_to_send_emails_for_SRM) to set it up.
+- Added the following in settings.py
+
+<img src="docs/readme/smtp.png">
+
+## Stripe
+
+- Stripe was used to handle the online payments for the site. It was implemented using the Code Institute lessons along with the official stripe [documentation](https://stripe.com/docs/payments/quickstart).
+- Added the following in settings.py.
+
+<img src="docs/readme/stripe-config.png">
+
+## AWS
+
+- Static and media files are stored using Amazon's AWS cloud service.
+- The S3 and IAM services were used to achieve this. The following [documentation](https://codeinstitute.s3.amazonaws.com/fullstack/AWS%20changes%20sheet.pdf) by Code Institute was used as a guide.
+- Added the following in settings.py
+
+<img src="docs/readme/aws.png">
+
 ## Deployment to Heroku
 
 - Followed the steps from the [Code Institute](https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf) document.
 - Use `pip3 freeze --local > requirement.txt` to create a list of packages for Heroku to install for your app.
 - From Heroku create a new app with the region closest to you.
 - Then enter the resources tab and install Heroku Postgres.
-- Navigate to the settings tab and under config vars, set them according to the same variables listed in your own workspace.
+- Navigate to the settings tab and under config vars, set them according with the relevant data
+
+<img src="docs/readme/heroku-config-vars.png">
+
 - Due to a breach of security the project needs to be deployed using the Heroku CLI from the workspace:
     - Login to heroku `heroku login -i`
     - Enter your email and password.
@@ -629,7 +664,7 @@ The master branch of this repository has been used for the deployment version of
 
 - [Unsplash](https://unsplash.com/) for homepage images.
 - [Ride and Glide](https://www.rideandglide.co.uk/) for the product images.
-- Startbootsrap for verious templates [products](https://startbootstrap.com/template/shop-homepage) [Shop-item](https://startbootstrap.com/template/shop-item) [homepage](https://startbootstrap.com/template/scrolling-nav)
+- Startbootsrap for various templates [products](https://startbootstrap.com/template/shop-homepage) [Shop-item](https://startbootstrap.com/template/shop-item) [homepage](https://startbootstrap.com/template/scrolling-nav)
 - [Bootdey](https://www.bootdey.com/snippets/view/shopping-cart-checkout#html) for shopping cart format. 
 
 # Acknowledgements
