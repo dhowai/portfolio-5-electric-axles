@@ -310,6 +310,7 @@ SQLite was used during the development of the site and then moved to Postgres in
 -   Possible features to add in future updates:
     -   Add pagination for comments and products page for better user experience.
     -   Ability for users to delete their account.
+    -   Have a way for the user to enquire about the site/products.
     -   Have a group in the navigation bar for new items, items on sale, etc.
     -   Have a custom page/message informing guest users to create an account to use the wishlist feature.
     -   Have an add-to-basket functionality from the wishlist page.
