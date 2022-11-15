@@ -1,1 +1,0 @@
-web: gunicorn electric_axles.wsgi:application
