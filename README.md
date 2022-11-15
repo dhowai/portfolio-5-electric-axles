@@ -7,7 +7,7 @@ The project also uses stripe for online test payments and Heroku Postgres as a r
 
 Electric Axles is an e-commerce store that primarily sells a variety of personal electric vehicles. This project is for educational purposes only, images used are of existing items being sold in the current market.
 
-The live link can be found here: https://portfolio-5-electric-axles.herokuapp.com/
+The live link can be found here: https://portfolio-5-electric-axles.onrender.com
 
 ***
 
